@@ -2,8 +2,6 @@ import { GameDTO } from "./interface/games.model";
 import css from "./css/IndividualGame.module.css";
 
 export default function IndividualGame(props: GameDTO){
-
-    document.title = " Game Center - Game Details"
     const buildLink = () => `/game/${props.id}`
     return (
         <div className={css.game}>

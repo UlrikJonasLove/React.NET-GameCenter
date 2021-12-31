@@ -7,4 +7,5 @@ interface genericListProps{
 
 interface buttonProps{
     children: React.ReactNode;
+    onClick(): void;
 }
