@@ -1,0 +1,11 @@
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Models\bin\Debug\net6.0\GameCenter.Models.deps.json
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Models\bin\Debug\net6.0\GameCenter.Models.dll
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Models\bin\Debug\net6.0\ref\GameCenter.Models.dll
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Models\bin\Debug\net6.0\GameCenter.Models.pdb
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Models\obj\Debug\net6.0\GameCenter.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Models\obj\Debug\net6.0\GameCenter.Models.AssemblyInfoInputs.cache
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Models\obj\Debug\net6.0\GameCenter.Models.AssemblyInfo.cs
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Models\obj\Debug\net6.0\GameCenter.Models.csproj.CoreCompileInputs.cache
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Models\obj\Debug\net6.0\GameCenter.Models.dll
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Models\obj\Debug\net6.0\ref\GameCenter.Models.dll
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Models\obj\Debug\net6.0\GameCenter.Models.pdb

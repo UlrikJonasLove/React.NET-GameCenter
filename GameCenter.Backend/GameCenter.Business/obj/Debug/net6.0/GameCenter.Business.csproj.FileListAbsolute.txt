@@ -1,0 +1,17 @@
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\bin\Debug\net6.0\GameCenter.Business.deps.json
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\bin\Debug\net6.0\GameCenter.Business.dll
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\bin\Debug\net6.0\ref\GameCenter.Business.dll
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\bin\Debug\net6.0\GameCenter.Business.pdb
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\bin\Debug\net6.0\GameCenter.DataAccess.dll
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\bin\Debug\net6.0\GameCenter.Models.dll
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\bin\Debug\net6.0\GameCenter.DataAccess.pdb
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\bin\Debug\net6.0\GameCenter.Models.pdb
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\obj\Debug\net6.0\GameCenter.Business.csproj.AssemblyReference.cache
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\obj\Debug\net6.0\GameCenter.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\obj\Debug\net6.0\GameCenter.Business.AssemblyInfoInputs.cache
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\obj\Debug\net6.0\GameCenter.Business.AssemblyInfo.cs
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\obj\Debug\net6.0\GameCenter.Business.csproj.CoreCompileInputs.cache
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\obj\Debug\net6.0\GameCenter.Business.csproj.CopyComplete
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\obj\Debug\net6.0\GameCenter.Business.dll
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\obj\Debug\net6.0\ref\GameCenter.Business.dll
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Business\obj\Debug\net6.0\GameCenter.Business.pdb

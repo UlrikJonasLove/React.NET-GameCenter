@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f69ba348-ed95-49d5-9e56-ad7dafa61256": {
+      "ProjectGuid": "f69ba348-ed95-49d5-9e56-ad7dafa61256",
+      "DisplayName": "GameCenter.Api",
+      "ColorIndex": 0
+    },
+    "2c502179-696c-40ff-a264-19d522dd9cce": {
+      "ProjectGuid": "2c502179-696c-40ff-a264-19d522dd9cce",
+      "DisplayName": "GameCenter.Business",
+      "ColorIndex": 1
+    },
+    "23b35ed0-87c5-4a3e-9afe-d84f25a88765": {
+      "ProjectGuid": "23b35ed0-87c5-4a3e-9afe-d84f25a88765",
+      "DisplayName": "GameCenter.Models",
+      "ColorIndex": 2
+    },
+    "c337d8d8-376d-43fc-a9fa-9a38d80391e7": {
+      "ProjectGuid": "c337d8d8-376d-43fc-a9fa-9a38d80391e7",
+      "DisplayName": "GameCenter.DataAccess",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}
