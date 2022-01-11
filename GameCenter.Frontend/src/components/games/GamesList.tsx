@@ -9,8 +9,5 @@ export default function GamesList(props: gamesListProps) {
             {props.games?.map(game => 
             <IndividualGame {...game} key={game.id} />)}
         </div>
-    </GenericList>    
-
-        
-    
+    </GenericList>
 }

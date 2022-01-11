@@ -9,3 +9,4 @@ C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCe
 C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Models\obj\Debug\net6.0\GameCenter.Models.dll
 C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Models\obj\Debug\net6.0\ref\GameCenter.Models.dll
 C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Models\obj\Debug\net6.0\GameCenter.Models.pdb
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\GameCenter.Backend\GameCenter.Models\obj\Debug\net6.0\GameCenter.Models.csproj.AssemblyReference.cache

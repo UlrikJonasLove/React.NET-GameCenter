@@ -1,3 +1,4 @@
+using GameCenter.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GameCenter.Api.Controllers

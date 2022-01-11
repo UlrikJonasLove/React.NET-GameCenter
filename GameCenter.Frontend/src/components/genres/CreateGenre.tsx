@@ -1,6 +1,4 @@
-import { Field, Form, Formik } from "formik";
-import { Link } from "react-router-dom";
-import Button from "../Utils/Button";
+import GenreForm from './GenreForm'
 
 export default function CreateGenre() {
     // const history = useHistory();
@@ -8,23 +6,11 @@ export default function CreateGenre() {
         <>
             <h3>Create Genre</h3>
 
-            <Formik initialValues={{
-                name:""
-            }}
-            onSubmit={value => {
+            <GenreForm model={{name: ""}} 
+            onSubmit={async value => {
+                await new Promise(r => setTimeout(r, 1000));
                 console.log(value)
-            }}
-            >
-                <Form>
-                    <div className="mb-3">
-                        <label htmlFor="name">Name</label>
-                        <Field name="name" id="name" className="form-control"/>
-                    </div>
-
-                    <Button type="submit">Save</Button>
-                    <Link className="btn btn-secondary" to="/genres">Cancel</Link>
-                </Form>
-            </Formik>
+            }}/>
         </>
     )
 }

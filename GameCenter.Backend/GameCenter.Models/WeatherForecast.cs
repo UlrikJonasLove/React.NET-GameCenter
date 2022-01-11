@@ -1,4 +1,4 @@
-namespace GameCenter.Api
+namespace GameCenter.Models
 {
     public class WeatherForecast
     {

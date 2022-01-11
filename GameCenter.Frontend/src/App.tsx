@@ -2,11 +2,11 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Menu from './components/games/Menu';
 import routes from './route-config';
+import configureValidations from './Validations';
+
+configureValidations();
 
 function App() {
-
-  
-
   return (
     
     <BrowserRouter>
