@@ -9,7 +9,7 @@ export const DateField = (props: dateFieldProps) => {
             <input type="date" className="form-control"
             id={props.field}
             name={props.field}
-            defaultValue={values[props.field]?.toLocaleDateString("en-CA")}
+            defaultValue={values[props.field]?.toLocaleString("en-CA")}
             onChange={e => {
                 const date = new Date(e.currentTarget.value + "T00:00:00");
                 values[props.field] = date;

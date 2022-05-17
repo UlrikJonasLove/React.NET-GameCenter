@@ -15,4 +15,8 @@
     <ProjectReference Include="..\GameCenter.Models\GameCenter.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\Interfaces\" />
+  </ItemGroup>
+
 </Project>

@@ -23,15 +23,15 @@ export const routes = [
 
     {path: "/actors", component: Actors, exact: true},
     {path: "/actors/create", component: CreateActor},
-    {path: "/actors/edit:id(\\d+)", component: EditActor},
+    {path: "/actors/edit/:id(\\d+)", component: EditActor},
 
     {path: "/gamecenters", component: GameCenters, exact: true},
     {path: "/gamecenters/create", component: CreateGameCenter},
-    {path: "/gamecenters/edit:id(\\d+)", component: EditGameCenter},
+    {path: "/gamecenters/edit/:id(\\d+)", component: EditGameCenter},
 
     {path: "/games/filter", component: FilterGame},
     {path: "/games/create", component: CreateGame},
-    {path: "/games/edit:id(\\d+)", component: EditGame},
+    {path: "/games/edit/:id(\\d+)", component: EditGame},
 
 
     {path: "/", component: LandingPage, exact: true},

@@ -12,3 +12,8 @@ interface buttonProps{
     disabled:boolean;
     className: string;
 }
+
+export default interface coordinateDto {
+    lng: number;
+    lat: number;
+}

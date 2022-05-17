@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.Business\\GameCenter.Business.csproj": {}
+    "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.Business\\GameCenter.Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.Business\\GameCenter.Business.csproj": {
+    "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.Business\\GameCenter.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.Business\\GameCenter.Business.csproj",
+        "projectUniqueName": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.Business\\GameCenter.Business.csproj",
         "projectName": "GameCenter.Business",
-        "projectPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.Business\\GameCenter.Business.csproj",
+        "projectPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.Business\\GameCenter.Business.csproj",
         "packagesPath": "C:\\Users\\jonas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.Business\\obj\\",
+        "outputPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -31,8 +31,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.DataAccess\\GameCenter.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.DataAccess\\GameCenter.DataAccess.csproj"
+              "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.DataAccess\\GameCenter.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.DataAccess\\GameCenter.DataAccess.csproj"
               }
             }
           }
@@ -67,18 +67,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.DataAccess\\GameCenter.DataAccess.csproj": {
+    "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.DataAccess\\GameCenter.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.DataAccess\\GameCenter.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.DataAccess\\GameCenter.DataAccess.csproj",
         "projectName": "GameCenter.DataAccess",
-        "projectPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.DataAccess\\GameCenter.DataAccess.csproj",
+        "projectPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.DataAccess\\GameCenter.DataAccess.csproj",
         "packagesPath": "C:\\Users\\jonas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -98,8 +98,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.Models\\GameCenter.Models.csproj": {
-                "projectPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.Models\\GameCenter.Models.csproj"
+              "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.Models\\GameCenter.Models.csproj": {
+                "projectPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.Models\\GameCenter.Models.csproj"
               }
             }
           }
@@ -138,18 +138,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.Models\\GameCenter.Models.csproj": {
+    "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.Models\\GameCenter.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.Models\\GameCenter.Models.csproj",
+        "projectUniqueName": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.Models\\GameCenter.Models.csproj",
         "projectName": "GameCenter.Models",
-        "projectPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.Models\\GameCenter.Models.csproj",
+        "projectPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.Models\\GameCenter.Models.csproj",
         "packagesPath": "C:\\Users\\jonas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.Models\\obj\\",
+        "outputPath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -201,7 +201,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

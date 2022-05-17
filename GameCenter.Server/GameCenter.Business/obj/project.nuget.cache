@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IDanBpEeUNsF7cUFOLnfsOrQtiDldv/zFXEencOhPZv8A1oh3qrQEk1XFOe/FnE45YwYKgGwT/L+tYV1zE3G6g==",
+  "dgSpecHash": "oB8pPeI0wwFRYgIkSq4dPaJ3TM6fGMhNL1SfeXcq0WvQTFpbTffW8JIY/oPpAceodGKSwqoqvJzY4SAodJttAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Backend\\GameCenter.Business\\GameCenter.Business.csproj",
+  "projectFilePath": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\GameCenter.Server\\GameCenter.Business\\GameCenter.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\jonas\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
