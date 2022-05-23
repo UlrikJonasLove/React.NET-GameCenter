@@ -1,7 +1,7 @@
-import { GameDTO } from "./interface/games.model";
+import { GameDto } from "./models/games.model";
 import css from "./css/IndividualGame.module.css";
 
-export const IndividualGame = (props: GameDTO) => {
+export const IndividualGame = (props: GameDto) => {
     const buildLink = () => `/game/${props.id}`
     return (
         <div className={css.game}>

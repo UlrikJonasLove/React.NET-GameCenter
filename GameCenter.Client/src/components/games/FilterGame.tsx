@@ -1,12 +1,12 @@
 import { Field, Form, Formik } from "formik"
-import { genreDTO } from "../genres/models/GenreDTOs.model"
-import { Button } from "../Utils/Button"
-import { filterGamesForm } from "./interface/games.model"
+import { genreDTO } from "../genres/models/Genres.model"
+import { Button } from "../utils/Button"
+import { filterGamesFormDto } from "./models/games.model"
 
 export const FilterGame = () => {
     document.title = "Game Center - Search"
 
-    const initialValue: filterGamesForm = {
+    const initialValue: filterGamesFormDto = {
         title: "",
         genreId: 0,
         upcomingReleases: false,

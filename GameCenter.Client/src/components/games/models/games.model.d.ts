@@ -1,17 +1,17 @@
 import { actorGameDto } from "../../actors/model/actorsDTOs.model";
 
-export interface GameDTO {
+export interface GameDto {
     id: number;
     title: string;
     poster: string;
 }
 
-export interface LandingPageDTO {
+export interface LandingPageDto {
     newlyReleases?: GameDTO[];
     upcomingReleases?: GameDTO[];
 }
 
-export interface GameCreationDTO {
+export interface GameCreationDto {
     title: string;
     newlyReleased: boolean;
     trailer: string;
@@ -23,7 +23,7 @@ export interface GameCreationDTO {
     actors?: actorGameDto[];
 }
 
-export interface filterGamesForm {
+export interface filterGamesFormDto {
     title: string;
     genreId: number;
     upcomingReleases: boolean;

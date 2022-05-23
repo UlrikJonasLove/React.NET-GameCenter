@@ -3,7 +3,7 @@ import L from "leaflet";
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import 'leaflet/dist/leaflet.css';
-import  coordinateDto  from "./interface/utils.models";
+import  { coordinateDto }  from "./models/utils.models";
 import { useState } from "react";
 
 let defaultIcon = L.icon({

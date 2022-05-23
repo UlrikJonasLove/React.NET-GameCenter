@@ -1,9 +1,9 @@
-import { Form, Formik } from "formik";
+import { Form, Formik, FormikHelpers } from "formik";
 import { Link } from "react-router-dom";
-import { genreFormProps } from "./Interface/GenreProps.model";
-import { Button } from "../Utils/Button";
+import { Button } from "../utils/Button";
 import { TextField } from '../forms/TextField';
 import * as Yup from 'yup';
+import { genreCreationDTO } from "./models/Genres.model";
 
 export const GenreForm = (props: genreFormProps) =>{
     return (
@@ -23,4 +23,9 @@ export const GenreForm = (props: genreFormProps) =>{
             )}
         </Formik>
     )
+}
+
+interface genreFormProps{
+    model: genreCreationDTO;
+    onSubmit(values: genreCreationDTO, action: FormikHelpers<genreCreationDTO>): void;
 }

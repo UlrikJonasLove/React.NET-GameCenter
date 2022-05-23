@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { Loading } from "./Loading";
 
 export const GenericList = (props: genericListProps) => {
@@ -14,4 +15,11 @@ export const GenericList = (props: genericListProps) => {
     } else {
         return props.children;
     }
+}
+
+interface genericListProps{
+    list: any;
+    loadingUI?: ReactElement;
+    emptyListUI?: ReactElement;
+    children: ReactElement;
 }

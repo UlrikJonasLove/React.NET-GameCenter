@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { GamesList } from "./GamesList";
-import { LandingPageDTO } from "./interface/games.model";
+import { LandingPageDto } from "./models/games.model";
 
 export const LandingPage = () =>{
 
     document.title = "Game Center - Home"
-    const [Games, setGames] = useState<LandingPageDTO>({})
+    const [Games, setGames] = useState<LandingPageDto>({})
 
   useEffect(() => {
     const timerId = setTimeout(() => {

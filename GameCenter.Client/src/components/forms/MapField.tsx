@@ -1,6 +1,6 @@
 import { useFormikContext } from 'formik';
-import coordinateDto from '../Utils/interface/utils.models';
-import Map from '../Utils/Map';
+import { coordinateDto } from '../utils/models/utils.models';
+import Map from '../utils/Map';
 
 export const MapField = (props: mapFieldProps) => {
     const {values} = useFormikContext<any>();

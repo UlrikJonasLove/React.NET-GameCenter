@@ -4,10 +4,14 @@ import './index.css';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import ErrorBoundary from './components/errorHandling/ErrorBoundry';
+import { ErrorUI } from './components/errorHandling/ui/ErrorUI';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ErrorBoundary errorUI={<ErrorUI />}>
+      <App />
+    </ErrorBoundary>
   </React.StrictMode>,
   document.getElementById('root')
 );

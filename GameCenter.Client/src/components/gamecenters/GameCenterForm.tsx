@@ -1,11 +1,11 @@
-import { Form, Formik } from "formik";
+import { Form, Formik, FormikHelpers } from "formik";
 import { Link } from "react-router-dom";
 import { TextField } from "../forms/TextField";
-import { Button } from "../Utils/Button";
-import { gameCenterForm } from "./interface/GameCenters.interface";
+import { Button } from "../utils/Button";
 import * as Yup from "yup";
 import { MapField } from "../forms/MapField";
-import coordinateDto from "../Utils/interface/utils.models";
+import { coordinateDto } from "../utils/models/utils.models";
+import { gameCenterCreationDTO } from "./models/GameCenterDTO.model";
 
 export default function GameCenterForm(props: gameCenterForm) {
     const transformCoordinates = () : coordinateDto[] | undefined => {
@@ -38,4 +38,9 @@ export default function GameCenterForm(props: gameCenterForm) {
             )}
         </Formik>
     )
+}
+
+interface gameCenterForm {
+    model: gameCenterCreationDTO;
+    onSubmit(values: gameCenterCreationDTO, action: FormikHelpers<gameCenterCreationDTO>) : void;
 }

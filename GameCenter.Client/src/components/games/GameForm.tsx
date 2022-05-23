@@ -1,7 +1,7 @@
 import { Form, Formik, FormikHelpers } from "formik"
-import { GameCreationDTO } from "./interface/games.model";
+import { GameCreationDto } from "./models/games.model";
 import * as yup from "yup"
-import { Button } from "../Utils/Button";
+import { Button } from "../utils/Button";
 import { Link } from "react-router-dom";
 import { DateField } from "../forms/DateField";
 import { TextField } from "../forms/TextField";
@@ -9,7 +9,7 @@ import { ImageField } from "../forms/ImageField";
 import { CheckboxField } from "../forms/CheckboxField";
 import { multipleSelectorModel, MultipleSelectors } from "../forms/MultipleSelectors";
 import { useState } from "react";
-import { genreDTO } from "../genres/models/GenreDTOs.model";
+import { genreDTO } from "../genres/models/Genres.model";
 import { gameCenterDTO } from "../gamecenters/models/GameCenterDTO.model";
 import { TypeaheadActors } from "../forms/TypeaheadActors";
 import { actorGameDto } from "../actors/model/actorsDTOs.model";
@@ -100,11 +100,11 @@ export const GameForm = (props: gameFormProps) => {
 }
 
 interface gameFormProps {
-    model: GameCreationDTO;
+    model: GameCreationDto;
     selectedGenres: genreDTO[];
     nonSelectedGenres: genreDTO[];
     selectedGameCenters: gameCenterDTO[];
     nonSelectedGameCenters: gameCenterDTO[];
     selectedActors: actorGameDto[];
-    onSubmit(values: GameCreationDTO, actions: FormikHelpers<GameCreationDTO>): void;
+    onSubmit(values: GameCreationDto, actions: FormikHelpers<GameCreationDto>): void;
 }

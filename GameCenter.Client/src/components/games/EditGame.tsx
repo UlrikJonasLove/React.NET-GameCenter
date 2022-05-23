@@ -1,4 +1,4 @@
-import { genreDTO } from "../genres/models/GenreDTOs.model"
+import { genreDTO } from "../genres/models/Genres.model"
 import { gameCenterDTO } from "../gamecenters/models/GameCenterDTO.model"
 import { GameForm } from "./GameForm"
 import { actorGameDto } from "../actors/model/actorsDTOs.model"

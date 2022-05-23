@@ -1,5 +1,6 @@
 import { Field } from "formik"
 
+// Component for checkbox inputs, using props to get the field name and display name
 export const CheckboxField = (props: checkboxFieldProps) => {
     return (
         <div className="mb-3 form-check">

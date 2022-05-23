@@ -4,7 +4,7 @@ import { TextField } from "../forms/TextField";
 import { DateField } from "../forms/DateField";
 import { ImageField } from "../forms/ImageField";
 import { MarkdownField } from "../forms/MarkdownField";
-import { Button } from "../Utils/Button";
+import { Button } from "../utils/Button";
 import { Link } from "react-router-dom";
 import * as Yup from "yup"
 

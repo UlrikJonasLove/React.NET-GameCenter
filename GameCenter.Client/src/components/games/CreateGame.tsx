@@ -1,5 +1,5 @@
 import { gameCenterDTO } from "../gamecenters/models/GameCenterDTO.model"
-import { genreDTO } from "../genres/models/GenreDTOs.model"
+import { genreDTO } from "../genres/models/Genres.model"
 import { GameForm } from "./GameForm"
 
 export const CreateGame = () => {
