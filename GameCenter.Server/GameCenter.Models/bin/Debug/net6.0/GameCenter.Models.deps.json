@@ -8,13 +8,67 @@
     ".NETCoreApp,Version=v6.0": {
       "GameCenter.Models/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.1"
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
+          "LinqKit.Microsoft.EntityFrameworkCore": "6.1.2",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.1",
+          "Microsoft.EntityFrameworkCore.Tools": "6.0.1"
         },
         "runtime": {
           "GameCenter.Models.dll": {}
         }
       },
-      "Microsoft.CSharp/4.5.0": {},
+      "AutoMapper/11.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.0.0"
+          }
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
+        "dependencies": {
+          "AutoMapper": "11.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.0.0"
+          }
+        }
+      },
+      "Humanizer.Core/2.8.26": {
+        "runtime": {
+          "lib/netstandard2.0/Humanizer.dll": {
+            "assemblyVersion": "2.8.0.0",
+            "fileVersion": "2.8.26.1919"
+          }
+        }
+      },
+      "LinqKit.Core/1.2.2": {
+        "runtime": {
+          "lib/netstandard2.1/LinqKit.Core.dll": {
+            "assemblyVersion": "1.2.2.0",
+            "fileVersion": "1.2.2.0"
+          }
+        }
+      },
+      "LinqKit.Microsoft.EntityFrameworkCore/6.1.2": {
+        "dependencies": {
+          "LinqKit.Core": "1.2.2",
+          "Microsoft.EntityFrameworkCore": "6.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/LinqKit.Microsoft.EntityFrameworkCore.dll": {
+            "assemblyVersion": "6.1.2.0",
+            "fileVersion": "6.1.2.0"
+          }
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Data.SqlClient/2.1.4": {
         "dependencies": {
           "Microsoft.Data.SqlClient.SNI.runtime": "2.1.1",
@@ -99,6 +153,18 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/6.0.1": {},
+      "Microsoft.EntityFrameworkCore.Design/6.0.1": {
+        "dependencies": {
+          "Humanizer.Core": "2.8.26",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {
+            "assemblyVersion": "6.0.1.0",
+            "fileVersion": "6.0.121.56712"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/6.0.1": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.1",
@@ -121,6 +187,11 @@
             "assemblyVersion": "6.0.1.0",
             "fileVersion": "6.0.121.56712"
           }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/6.0.1": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "6.0.1"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/6.0.0": {
@@ -279,7 +350,7 @@
       },
       "Microsoft.IdentityModel.Tokens/6.8.0": {
         "dependencies": {
-          "Microsoft.CSharp": "4.5.0",
+          "Microsoft.CSharp": "4.7.0",
           "Microsoft.IdentityModel.Logging": "6.8.0",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
@@ -464,12 +535,47 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.CSharp/4.5.0": {
+    "AutoMapper/11.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
-      "path": "microsoft.csharp/4.5.0",
-      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
+      "sha512": "sha512-+596AnKykYCk9RxXCEF4GYuapSebQtFVvIA1oVG1rrRkCLAC7AkWehJ0brCfYUbdDW3v1H/p0W3hob7JoXGjMw==",
+      "path": "automapper/11.0.0",
+      "hashPath": "automapper.11.0.0.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0asw5WxdCFh2OTi9Gv+oKyH9SzxwYQSnO8TV5Dd0GggovILzJW4UimP26JAcxc3yB5NnC5urooZ1BBs8ElpiBw==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/11.0.0",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512"
+    },
+    "Humanizer.Core/2.8.26": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
+      "path": "humanizer.core/2.8.26",
+      "hashPath": "humanizer.core.2.8.26.nupkg.sha512"
+    },
+    "LinqKit.Core/1.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ORnvvVKcuAak657JmRTRw4CGjo/1Aba/dMDYUlSrT9Gv2/LBKusR+IQrGR3sOLdGVQLyHvLlCUsptqWQ/XIT1Q==",
+      "path": "linqkit.core/1.2.2",
+      "hashPath": "linqkit.core.1.2.2.nupkg.sha512"
+    },
+    "LinqKit.Microsoft.EntityFrameworkCore/6.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qCqghpEPakB6/zAMFvCfB/uMLNUXAKytfPtE8FSf8Z9sW2m7G0y5O5ENhiIXxR1iWbTdUqrtR8isaAv2lSEEzg==",
+      "path": "linqkit.microsoft.entityframeworkcore/6.1.2",
+      "hashPath": "linqkit.microsoft.entityframeworkcore.6.1.2.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.Data.SqlClient/2.1.4": {
       "type": "package",
@@ -506,6 +612,13 @@
       "path": "microsoft.entityframeworkcore.analyzers/6.0.1",
       "hashPath": "microsoft.entityframeworkcore.analyzers.6.0.1.nupkg.sha512"
     },
+    "Microsoft.EntityFrameworkCore.Design/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-odZLopaluipZXgJxue4VbBXe9YoTOOmg324rkyr0XqXWR7DSdWy5Mi0+99OvsOmvl6LxEqK4IOgNnycB+oF3pQ==",
+      "path": "microsoft.entityframeworkcore.design/6.0.1",
+      "hashPath": "microsoft.entityframeworkcore.design.6.0.1.nupkg.sha512"
+    },
     "Microsoft.EntityFrameworkCore.Relational/6.0.1": {
       "type": "package",
       "serviceable": true,
@@ -519,6 +632,13 @@
       "sha512": "sha512-bXmFi9F7GHT0dMUvuT2b5Pf8TtPnU6sQxZ5pvf3UElva+cD0YqsGI5bJGTx21pcMdw3bVhqzCLrpfA/zgHFyMw==",
       "path": "microsoft.entityframeworkcore.sqlserver/6.0.1",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.6.0.1.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jXhlTOcFct3U9YiH9KNfjIHzEPxjXgH7hiriWoZJ0PtT9/GGeWHu9Dblb5D441X+91EMqx7jbpKHNMIu6mvz5w==",
+      "path": "microsoft.entityframeworkcore.tools/6.0.1",
+      "hashPath": "microsoft.entityframeworkcore.tools.6.0.1.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/6.0.0": {
       "type": "package",
