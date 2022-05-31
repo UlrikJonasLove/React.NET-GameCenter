@@ -1,0 +1,16 @@
+body {
+    padding-top: 70px;
+    padding-bottom: 130px;
+}
+
+form > a {
+    margin-left: 1rem;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.table a {
+    margin-right: 1rem;
+}

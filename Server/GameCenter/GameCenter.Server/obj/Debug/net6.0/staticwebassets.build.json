@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Xb97wehvXIAvCKQZympgNzvl0Ruz/fhyZEXMbKUWz6o=",
+  "Source": "GameCenter.Server",
+  "BasePath": "_content/GameCenter.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

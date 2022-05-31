@@ -1,0 +1,17 @@
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\bin\Debug\net6.0\GameCenter.DataAccess.deps.json
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\bin\Debug\net6.0\GameCenter.DataAccess.runtimeconfig.json
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\bin\Debug\net6.0\GameCenter.DataAccess.dll
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\bin\Debug\net6.0\GameCenter.DataAccess.pdb
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\bin\Debug\net6.0\GameCenter.Models.dll
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\bin\Debug\net6.0\GameCenter.Models.pdb
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\obj\Debug\net6.0\GameCenter.DataAccess.csproj.AssemblyReference.cache
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\obj\Debug\net6.0\GameCenter.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\obj\Debug\net6.0\GameCenter.DataAccess.AssemblyInfoInputs.cache
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\obj\Debug\net6.0\GameCenter.DataAccess.AssemblyInfo.cs
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\obj\Debug\net6.0\GameCenter.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\obj\Debug\net6.0\GameCenter.DataAccess.csproj.CopyComplete
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\obj\Debug\net6.0\GameCenter.DataAccess.dll
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\obj\Debug\net6.0\refint\GameCenter.DataAccess.dll
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\obj\Debug\net6.0\GameCenter.DataAccess.pdb
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\obj\Debug\net6.0\GameCenter.DataAccess.genruntimeconfig.cache
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.DataAccess\obj\Debug\net6.0\ref\GameCenter.DataAccess.dll
