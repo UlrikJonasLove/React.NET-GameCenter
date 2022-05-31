@@ -1,5 +1,6 @@
 export const title = "Game Center";
 export const activeYear = new Date().getFullYear().toString();
+export const Delete = "Delete";
 
 export const selectOptions = [
     {value: "5", key: 5},

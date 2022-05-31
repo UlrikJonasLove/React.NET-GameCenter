@@ -7,6 +7,8 @@ import { GenericList } from "../utils/GenericList"
 import { genreDTO } from "./models/Genres.model"
 import { Pagination} from '../utils/Pagination'
 import { RecordsPerPageSelect } from "../utils/RecordsPerPageSelect"
+import { customConfirm } from "../../helpers/customConfirm"
+import { Delete } from "../../constants/GameCenterVariables"
 
 export const Genres = () => {
     document.title = "Game Center - Genres"
@@ -16,6 +18,11 @@ export const Genres = () => {
     const [page, setPage] = useState(1);
 
     useEffect(() => {
+        loadGenres();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [page, recordsPerPage])
+
+    const loadGenres = () => {
         axios.get(UrlGenres, {
             params: {page, recordsPerPage}
         })
@@ -25,7 +32,19 @@ export const Genres = () => {
             setTotalAmountOfpages(Math.ceil(totalAmountOfRecords / recordsPerPage));
             setGenres(response.data);
         })
-    }, [page, recordsPerPage])
+    }
+
+    const deleteGenre = async (id: number) => {
+        try{
+            await axios.delete(`${UrlGenres}/${id}`);
+            loadGenres();
+        }
+        catch(error){
+            if(error && error.response){
+                console.log(error.response.data);
+            }
+        }
+    }
 
     return(
         <>
@@ -52,9 +71,11 @@ export const Genres = () => {
                         <tr key={genre.id}>
                             <td>
                                 <Link className="btn btn-success" 
-                                to={`/genres/edit/${genre.id}`}>Edit</Link>
+                                    to={`/genres/edit/${genre.id}`}>Edit</Link>
 
-                                <Button className="btn btn-danger">Delete</Button>
+                                <Button className="btn btn-danger"
+                                    onClick={() => customConfirm(() => deleteGenre(genre.id),
+                                         `${Delete} ${genre.name}?`, `${Delete}`)}>{Delete}</Button>
                             </td>
                             <td>
                                 {genre.name}

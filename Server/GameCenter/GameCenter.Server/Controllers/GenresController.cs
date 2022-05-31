@@ -73,10 +73,18 @@ namespace GameCenter.Server.Controllers
 
         }
 
-        [HttpDelete]
-        public ActionResult Delete()
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> Delete(int id)
         {
-            throw new NotImplementedException();
+            var exist = await context.Genres.AnyAsync(x => x.Id == id);
+
+            if (!exist)
+                return NotFound();
+
+            context.Remove(new Genre() { Id = id });
+            await service.SaveGenresAsync();
+
+            return NoContent();
         }
     }
 }
