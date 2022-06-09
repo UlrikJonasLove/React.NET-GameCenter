@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameCenter.Models.Genre
+namespace GameCenter.Business.DTOs.GameCenters
 {
-    public class Genre
+    public class GameCenterDto
     {
         public int Id { get; set; }
         public string? Name { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
     }
 }

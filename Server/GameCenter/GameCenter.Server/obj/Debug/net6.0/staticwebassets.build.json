@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "Xb97wehvXIAvCKQZympgNzvl0Ruz/fhyZEXMbKUWz6o=",
+  "Hash": "i72FS0unyfW4z0T6nz/d20QN0MKpe9B53g5NSLhBKS8=",
   "Source": "GameCenter.Server",
   "BasePath": "_content/GameCenter.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "GameCenter.Server\\wwwroot",
+      "Source": "GameCenter.Server",
+      "ContentRoot": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\",
+      "BasePath": "_content/GameCenter.Server",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\actors\\aa30ed00-484e-49f2-b63a-7b17641ca14c.jpg",
+      "SourceId": "GameCenter.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\",
+      "BasePath": "_content/GameCenter.Server",
+      "RelativePath": "actors/aa30ed00-484e-49f2-b63a-7b17641ca14c.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\actors\\aa30ed00-484e-49f2-b63a-7b17641ca14c.jpg"
+    }
+  ]
 }

@@ -3,9 +3,8 @@ using GameCenter.Business.DTOs.Genres;
 using GameCenter.Business.DTOs.Pagination;
 using GameCenter.Business.Helpers;
 using GameCenter.DataAccess.Data;
-using GameCenter.Models.Genre;
-using GameCenter.Server.Services.Genres;
-using Microsoft.AspNetCore.Http;
+using GameCenter.Models.Genres;
+using GameCenter.Business.Services.Genres;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -31,7 +30,7 @@ namespace GameCenter.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<GenreDto>>> Get([FromQuery] PaginationDto pagination)
         {
-            var queryable = context.Genres.AsQueryable();
+            var queryable = service.GetGenresAsQueryable();
             await HttpContext.InsertParametersPaginationInHeader(queryable);
             var genres = await queryable.OrderBy(x => x.Name).Paginate(pagination).ToListAsync();
             return mapper.Map<List<GenreDto>>(genres);
@@ -60,13 +59,13 @@ namespace GameCenter.Server.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> Put(int id, [FromBody] GenreCreationDto model)
+        public async Task<ActionResult> Put(int id, [FromBody] GenreCreationDto genreCreation)
         {
-            var genre = await context.Genres.FirstOrDefaultAsync(x => x.Id == id);
+            var genre = await service.GetGenreByIdAsync(id);
             if(genre == null)
                 return NotFound();
 
-            genre = mapper.Map(model, genre);
+            genre = mapper.Map(genreCreation, genre);
             await service.SaveGenresAsync();
 
             return NoContent();
@@ -81,7 +80,7 @@ namespace GameCenter.Server.Controllers
             if (!exist)
                 return NotFound();
 
-            context.Remove(new Genre() { Id = id });
+            service.DeleteGenres(id);
             await service.SaveGenresAsync();
 
             return NoContent();

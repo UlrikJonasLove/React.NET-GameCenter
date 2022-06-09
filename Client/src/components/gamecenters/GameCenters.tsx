@@ -1,11 +1,34 @@
-import { Link } from "react-router-dom"
+import { UrlGameCenters } from "../../constants/endpoints"
+import { Delete } from "../../constants/GameCenterVariables"
+import { IndexEntity } from "../utils/IndexEntity"
+import { gameCenterDTO } from "./models/GameCenterDTO.model"
 
 export const GameCenters = () => {
     document.title = "Game Center - Game Centers"
     return(
-        <>
-            <h3>Game Centers</h3>
-            <Link className="btn btn-primary" to="/gamecenters/create">Create Game Center</Link>
-        </>
+        <IndexEntity<gameCenterDTO>
+            url={UrlGameCenters} createUrl="gamecenters/create" title="Game Centers" entityName="Game Centers">
+                {(entities, buttons) =>
+                <>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Name</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {entities?.map(entity => 
+                    <tr key={entity.id}>
+                        <td>
+                            {buttons(`/gamecenters/edit/${entity.id}`, `${Delete} ${entity.name}`, `${Delete}`, entity.id)}
+                        </td>
+                        <td>
+                            {entity.name}
+                        </td>
+                    </tr>)}
+                </tbody>
+                </>
+                }
+        </IndexEntity>
     )
 }

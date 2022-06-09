@@ -11,6 +11,7 @@ C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCen
 C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.Business\obj\Debug\net6.0\GameCenter.Business.AssemblyInfoInputs.cache
 C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.Business\obj\Debug\net6.0\GameCenter.Business.AssemblyInfo.cs
 C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.Business\obj\Debug\net6.0\GameCenter.Business.csproj.CoreCompileInputs.cache
+C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.Business\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs
 C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.Business\obj\Debug\net6.0\GameCenter.Business.csproj.CopyComplete
 C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.Business\obj\Debug\net6.0\GameCenter.Business.dll
 C:\Users\jonas\Desktop\myCode\Projekt\GameCenter-React\Server\GameCenter\GameCenter.Business\obj\Debug\net6.0\refint\GameCenter.Business.dll

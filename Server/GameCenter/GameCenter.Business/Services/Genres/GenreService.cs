@@ -1,8 +1,7 @@
-﻿using GameCenter.Business.DTOs.Pagination;
-using GameCenter.Business.Repositories.Genres;
-using GameCenter.Models.Genre;
+﻿using GameCenter.DataAccess.Repositories.Genres;
+using GameCenter.Models.Genres;
 
-namespace GameCenter.Server.Services.Genres
+namespace GameCenter.Business.Services.Genres
 {
     public class GenreService : IGenreService
     {
@@ -12,9 +11,9 @@ namespace GameCenter.Server.Services.Genres
             this.repository = repository;
         }
 
-        public async Task<List<Genre>> GetGenresAsync(PaginationDto pagination)
+        public IQueryable<Genre> GetGenresAsQueryable()
         {
-            return await repository.GetGenresAsync(pagination);
+            return repository.GetGenresAsQueryable();
         }
 
         public async Task<Genre> GetGenreByIdAsync(int id)
@@ -25,6 +24,11 @@ namespace GameCenter.Server.Services.Genres
         public void AddGenres(Genre genre)
         {
             repository.AddGenres(genre);
+        }
+
+        public void DeleteGenres(int id)
+        {
+            repository.DeleteGenres(id);
         }
 
 

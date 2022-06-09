@@ -2,7 +2,7 @@ export const title = "Game Center";
 export const activeYear = new Date().getFullYear().toString();
 export const Delete = "Delete";
 
-export const selectOptions = [
+export const recordsPerPageOptions = [
     {value: "5", key: 5},
     {value: "10", key: 10},
     {value: "25", key: 25},

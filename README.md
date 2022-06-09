@@ -1,2 +1,2 @@
 # GameCenter with React
-Game Center with React & ASP.NET cORE 6
+Game Center with React & ASP.NET Core 6

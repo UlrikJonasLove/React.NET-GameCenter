@@ -1,17 +1,26 @@
+import { UrlActors } from "../../constants/endpoints";
+import { convertActorToFormData } from "../../helpers/formData";
+import { EditEntity } from "../utils/EditEntity";
 import { ActorForm } from "./ActorForm";
+import { actorCreationDTO, actorDto } from './model/actorsDTOs.model'
 
 export const EditActor = () => {
+    const transform = (actor: actorDto): actorCreationDTO => {
+        return {
+            name: actor.name,
+            pictureURL: actor.picture,
+            biography: actor.biography,
+            dateOfBirth: new Date(actor.dateOfBirth),
+        }
+    }
+
     return(
-        <>
-            <h3>Edit Actor</h3>
-            <ActorForm model={{name: "Ulrik Rosberg", 
-            dateOfBirth: new Date("1993-10-22T00:00:00"),
-            pictureURL: "some image",
-            biography: "Hello"
-        }}
-            
-                onSubmit={values => console.log(values)}
-                />
-        </>
+        <EditEntity<actorCreationDTO, actorDto>
+            url={UrlActors} indexUrl="/actors" entityName="Actor" transformFormData={convertActorToFormData} transform={transform}>
+                {(entity, edit) => 
+                <ActorForm 
+                    model={entity}
+                    onSubmit={async values => await edit(values)}/>}
+        </EditEntity>
     )
 }
