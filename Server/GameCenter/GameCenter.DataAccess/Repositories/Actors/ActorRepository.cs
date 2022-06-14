@@ -23,6 +23,11 @@ namespace GameCenter.DataAccess.Repositories.Actors
             return context.Actors.AsQueryable();
         }
 
+        //public async Task<Actor> QueryByName()
+        //{
+        //    return await context.Actors.
+        //}
+
         public async Task<Actor> GetActorByIdAsync(int id)
         {
 #pragma warning disable CS8603 // Possible null reference return.

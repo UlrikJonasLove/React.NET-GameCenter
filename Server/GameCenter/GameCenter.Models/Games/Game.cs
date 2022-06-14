@@ -17,7 +17,7 @@ namespace GameCenter.Models.Games
         [Required]
         public string? Title { get; set; }
         public string? Trailer { get; set; }
-        public bool? NewlyReleased { get; set; }
+        public bool NewlyReleased { get; set; }
         public DateTime ReleaseDate { get; set; }
         public string? Poster { get; set; }
         public List<GamesGenres>? GamesGenres { get; set; }

@@ -18,13 +18,15 @@ namespace GameCenter.Server.Controllers
         private readonly IMapper mapper;
         private readonly IFileStorageService fileStorage;
         private readonly IActorService service;
+        private readonly AppDbContext context;
         private readonly string containerName = "actors";
 
-        public ActorsController(IMapper mapper, IFileStorageService fileStorage, IActorService service)
+        public ActorsController(IMapper mapper, IFileStorageService fileStorage, IActorService service, AppDbContext context)
         {
             this.mapper = mapper;
             this.fileStorage = fileStorage;
             this.service = service;
+            this.context = context;
         }
 
         [HttpGet]
@@ -49,13 +51,29 @@ namespace GameCenter.Server.Controllers
             return mapper.Map<ActorDto>(actor);
         }
 
+        [HttpGet("searchByName/{query}")]
+        public async Task<ActionResult<List<ActorsGameDto>>> SearchByName(string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+                return new List<ActorsGameDto>();
+
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+            return await context.Actors
+                .Where(x => x.Name.Contains(query))
+                .OrderBy(x => x.Name)
+                .Select(x => new ActorsGameDto { Id = x.Id, Name = x.Name, Picture = x.Picture })
+                .Take(5)
+                .ToListAsync();
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+        }
+
         [HttpPost]
         public async Task<ActionResult> Post([FromForm] ActorCreationDto actorCreation)
         {
             var actor = mapper.Map<Actor>(actorCreation);
             if(actorCreation.Picture != null) 
             {
-                actor.Picture = await fileStorage.SaveFile(containerName, actorCreation.Picture);
+                actor.Picture = await fileStorage.SaveFile($"{containerName}/{actor.Name}", actorCreation.Picture);
             }
 
             service.AddActor(actor);
@@ -76,7 +94,7 @@ namespace GameCenter.Server.Controllers
             if(actorCreation.Picture != null)
             {
 #pragma warning disable CS8604 // Possible null reference argument.
-                actor.Picture = await fileStorage.EditFile(containerName, actorCreation.Picture, actor.Picture);
+                actor.Picture = await fileStorage.EditFile($"{containerName}/{actor.Name}", actorCreation.Picture, actor.Picture);
 #pragma warning restore CS8604 // Possible null reference argument.
             }
 

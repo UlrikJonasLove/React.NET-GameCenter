@@ -20,7 +20,7 @@ export const MultipleSelectors = (props: multipleSelectorsProps) => {
     }
 
     const deSelectAll = () => {
-        const nonSelected = [...props.selected, ...props.nonSelected];
+        const nonSelected = [...props.nonSelected, ...props.selected];
         const selected: multipleSelectorModel[] = [];
         props.onChange(selected, nonSelected);
     }
@@ -30,7 +30,7 @@ export const MultipleSelectors = (props: multipleSelectorsProps) => {
             <label>{props.displayName}</label>
             <div className={styles.multipleSelectors}>
                 <ul>
-                    {props.nonSelected.map(item => 
+                    {props.nonSelected?.map(item => 
                     <li key={item.key} onClick={() => select(item)}>{item.value}</li>)}
                 </ul>
                 <div className={styles.multipleSelectorsButtons}>
@@ -38,7 +38,7 @@ export const MultipleSelectors = (props: multipleSelectorsProps) => {
                         <button type="button" onClick={deSelectAll}>{'<<'}</button>
                 </div>
                 <ul>
-                    {props.selected.map(item => 
+                    {props.selected?.map(item => 
                     <li key={item.key} onClick={() => deSelect(item)}>{item.value}</li>)}
                 </ul>
             </div>

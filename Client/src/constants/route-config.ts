@@ -14,7 +14,9 @@ import { LandingPage } from "../components/games/LandingPage";
 import { FilterGame } from "../components/games/FilterGame";
 import { CreateGame } from "../components/games/CreateGame";
 import { EditGame } from "../components/games/EditGame";
+
 import { RedirectToLandingPage } from "../components/utils/RedirectToLandingPage";
+import { GameDetails } from "../components/games/GameDetails";
 
 export const routes = [
     {path: "/genres", component: Genres, exact: true},
@@ -30,8 +32,10 @@ export const routes = [
     {path: "/gamecenters/edit/:id(\\d+)", component: EditGameCenter},
 
     {path: "/games/filter", component: FilterGame},
-    {path: "/games/create", component: CreateGame},
-    {path: "/games/edit/:id(\\d+)", component: EditGame},
+    {path: "/game/create", component: CreateGame},
+    {path: "/game/edit/:id(\\d+)", component: EditGame},
+    {path: "/game/:id(\\d+)", component: GameDetails},
+
 
 
     {path: "/", component: LandingPage, exact: true},

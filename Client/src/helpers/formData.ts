@@ -1,4 +1,5 @@
 import { actorCreationDTO } from "../components/actors/model/actorsDTOs.model";
+import { GameCreationDto } from "../components/games/models/games.model";
 
 export const convertActorToFormData = (actor: actorCreationDTO): FormData => {
     const formData = new FormData();
@@ -18,6 +19,33 @@ export const convertActorToFormData = (actor: actorCreationDTO): FormData => {
         formData.append("picture", actor.picture);
     }
 
+
+    return formData;
+}
+
+export const convertGameToFormData = (game: GameCreationDto) => {
+    const formData = new FormData();
+
+    formData.append("title", game.title);
+
+    if(game.summary){
+        formData.append("summary", game.summary);
+    }
+
+    formData.append("trailer", game.trailer);
+    formData.append("newlyReleased", String(game.newlyReleased));
+
+    if(game.releaseDate) {
+        formData.append("releaseDate", formatDate(game.releaseDate));
+    }
+
+    if(game.poster){
+        formData.append("picture", game.poster);
+    }
+
+    formData.append("genresIds", JSON.stringify(game.genresIds));
+    formData.append("gameCentersIds", JSON.stringify(game.gameCentersIds));
+    formData.append("actors", JSON.stringify(game.actors));
 
     return formData;
 }

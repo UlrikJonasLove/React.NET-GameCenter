@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "i72FS0unyfW4z0T6nz/d20QN0MKpe9B53g5NSLhBKS8=",
+  "Hash": "ply3SBSeh2pjR1AQ1fXzlVuVt0+WgAnA/UfXomSKeok=",
   "Source": "GameCenter.Server",
   "BasePath": "_content/GameCenter.Server",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\actors\\aa30ed00-484e-49f2-b63a-7b17641ca14c.jpg",
+      "Identity": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\actors\\Ulrik Rosberg\\86b7e8d0-8ff5-4a27-a1d2-c050e65919fa.jpg",
       "SourceId": "GameCenter.Server",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\",
       "BasePath": "_content/GameCenter.Server",
-      "RelativePath": "actors/aa30ed00-484e-49f2-b63a-7b17641ca14c.jpg",
+      "RelativePath": "actors/Ulrik Rosberg/86b7e8d0-8ff5-4a27-a1d2-c050e65919fa.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -31,7 +31,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\actors\\aa30ed00-484e-49f2-b63a-7b17641ca14c.jpg"
+      "OriginalItemSpec": "wwwroot\\actors\\Ulrik Rosberg\\86b7e8d0-8ff5-4a27-a1d2-c050e65919fa.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\games\\54adff7f-c2f3-4854-985f-f89a7c81699e.jpg",
+      "SourceId": "GameCenter.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\",
+      "BasePath": "_content/GameCenter.Server",
+      "RelativePath": "games/54adff7f-c2f3-4854-985f-f89a7c81699e.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\games\\54adff7f-c2f3-4854-985f-f89a7c81699e.jpg"
     }
   ]
 }

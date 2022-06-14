@@ -8,7 +8,7 @@ export const Menu = () => {
                 <div className="collapse navbar-collapse">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                            <NavLink className="nav-link" to="/games/create">
+                            <NavLink className="nav-link" to="/game/create">
                                 Add Game
                             </NavLink>
                         </li>

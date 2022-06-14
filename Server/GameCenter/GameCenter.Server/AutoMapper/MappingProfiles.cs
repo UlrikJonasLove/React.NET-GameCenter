@@ -37,6 +37,73 @@ namespace GameCenter.Server.AutoMapper
                 .ForMember(x => x.GamesGenres, options => options.MapFrom(MapGamesGenres))
                 .ForMember(x => x.GameCentersGame, option => option.MapFrom(MapGameCentersGames))
                 .ForMember(x => x.GamesActors, option => option.MapFrom(MapGamesActors));
+
+            CreateMap<Game, GameDto>()
+                .ForMember(x => x.Genres, options => options.MapFrom(MapGamesGenres))
+                .ForMember(x => x.GameCenters, options => options.MapFrom(MapGameCentersGames))
+                .ForMember(x => x.Actors, options => options.MapFrom(MapGamesActors));
+        }
+
+        private List<ActorsGameDto> MapGamesActors(Game game, GameDto gameDto)
+        {
+            var result = new List<ActorsGameDto>();
+
+            if (game.GamesActors != null)
+            {
+                foreach (var actors in game.GamesActors)
+                {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+                    result.Add(new ActorsGameDto()
+                    {
+                        Id = actors.ActorId,
+                        Name = actors.Actor.Name,
+                        Character = actors.Character,
+                        Picture = actors.Actor.Picture,
+                        Order = actors.Order
+                    });
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+                }
+            }
+
+            return result;
+        }
+
+        private List<GameCenterDto> MapGameCentersGames(Game game, GameDto gameDto)
+        {
+            var result = new List<GameCenterDto>();
+
+            if (game.GameCentersGame != null)
+            {
+                foreach (var gameCentersGames in game.GameCentersGame)
+                {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+                    result.Add(new GameCenterDto() { Id = gameCentersGames.GameCenterId, 
+                        Name = gameCentersGames.GameCenter.Name,
+                        Latitude = gameCentersGames.GameCenter.Location.Y,
+                        Longitude = gameCentersGames.GameCenter.Location.X
+                       });
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+                }
+            }
+
+            return result;
+        }
+
+        private List<GenreDto> MapGamesGenres(Game game, GameDto gameDto)
+        {
+            var result = new List<GenreDto>();
+
+            if (game.GamesGenres != null)
+            {
+                foreach (var genre in game.GamesGenres)
+                {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+                    result.Add(new GenreDto() { Id = genre.GenreId, Name = genre.Genre.Name });
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+                }
+            }
+
+            return result;
         }
 
         private List<GamesGenres> MapGamesGenres(GameCreationDto gameCreation, Game game)

@@ -13,20 +13,22 @@ import { genreDTO } from "../genres/models/Genres.model";
 import { gameCenterDTO } from "../gamecenters/models/GameCenterDTO.model";
 import { TypeaheadActors } from "../forms/TypeaheadActors";
 import { actorGameDto } from "../actors/model/actorsDTOs.model";
+import { MarkdownField } from "../forms/MarkdownField";
 
 export const GameForm = (props: gameFormProps) => {
 
+    // mapToModel is a function that takes the form data and converts it to the model
     const mapToModel = (items: {id: number, name: string}[]): multipleSelectorModel[] => {
-        return items.map(item => {
+        return items?.map((item) => {
             return {key: item.id, value: item.name}
         })
     }
 
-    const [selectedGameCenters, setSelectedGameCenters] = useState(mapToModel(props.selectedGameCenters))
-    const [nonSelectedGameCenters, setNonSelectedGameCenters] = useState(mapToModel(props.nonSelectedGameCenters))
-
     const [selectedGenres, setSelectedGenres] = useState(mapToModel(props.selectedGenres))
     const [nonSelectedGenres, setNonSelectedGenres] = useState(mapToModel(props.nonSelectedGenres))
+
+    const [selectedGameCenters, setSelectedGameCenters] = useState(mapToModel(props.selectedGameCenters))
+    const [nonSelectedGameCenters, setNonSelectedGameCenters] = useState(mapToModel(props.nonSelectedGameCenters))
 
     const [selectedActors, setSelectedActors] = useState(props.selectedActors)
 
@@ -34,8 +36,8 @@ export const GameForm = (props: gameFormProps) => {
         <Formik
         initialValues={props.model}
         onSubmit={(values, actions) => {
-            values.genresIds = selectedGenres.map(item => item.key);
-            values.gameCentersIds = selectedGameCenters.map(item => item.key);
+            values.genresIds = selectedGenres?.map(item => item.key);
+            values.gameCentersIds = selectedGameCenters?.map(item => item.key);
             values.actors = selectedActors;
             props.onSubmit(values, actions);
         }}
@@ -47,8 +49,10 @@ export const GameForm = (props: gameFormProps) => {
                     <TextField displayName="Title" field="title" />
                     <CheckboxField displayName="Newly Released" field="newlyReleased" />
                     <TextField displayName="Trailer" field="trailer" />
-                    <DateField displayName="Newly Released" field="newlyReleased" />
+                    <DateField displayName="Release Date" field="releaseDate" />
                     <ImageField displayName="Poster" field="poster" imageURL={props.model.posterUrl} />
+
+                    <MarkdownField displayName="Summary" field="summary"/>
 
                     <MultipleSelectors 
                         displayName="Genres" 
@@ -84,7 +88,7 @@ export const GameForm = (props: gameFormProps) => {
                                     const index = selectedActors.findIndex(item => item.id === actor.id);
 
                                     const actors = [...selectedActors];
-                                    actors[index].character = e.target.value;
+                                    actors[index].character = e.currentTarget.value;
                                     setSelectedActors(actors);
                                 }} />
                             </>

@@ -1,28 +1,68 @@
-import { genreDTO } from "../genres/models/Genres.model"
-import { gameCenterDTO } from "../gamecenters/models/GameCenterDTO.model"
 import { GameForm } from "./GameForm"
-import { actorGameDto } from "../actors/model/actorsDTOs.model"
+import { useEffect, useState } from "react"
+import axios, { AxiosResponse } from "axios"
+import { UrlGames } from "../../constants/endpoints"
+import { useHistory, useParams } from "react-router-dom"
+import { GameCreationDto, gamePutGetDto } from "./models/games.model"
+import { convertGameToFormData } from "../../helpers/formData"
+import { DisplayErrors } from "../errorHandling/DisplayErrors"
 
 export const EditGame = () => {
+    const history = useHistory();
+    const {id}:any = useParams()
+    const [game, setGame] = useState<GameCreationDto>();
+    const [gamePutGet, setGamePutGet] = useState<gamePutGetDto>();
+    const [errors, setErrors] = useState<string[]>([]);
 
-    const nonSelectedGenres: genreDTO[] = [{id: 2, name: "Action"}, {id: 3, name: "Adventure"}]
-    const selectedGenres: genreDTO[] = [{id: 1, name: "RPG"}, {id: 2, name: "Action"}]
-    const nonSelectedGameCenters: gameCenterDTO[] = [{id: 1, name: "Småland", latitude: 57.78066842497087, longitude: 14.16906738333637}]
-    const selectedGameCenters: gameCenterDTO[] = [{id: 1, name: "Småland", latitude: 57.78066842497087, longitude: 14.16906738333637}]
-    
-    const selectedActors: actorGameDto[] = [{id: 1, name: "Actor 1", character: "Character 1", picture: "https://i.gifer.com/ZZ5H.gif"}]
+    useEffect(() =>{
+        axios.get(`${UrlGames}/PutGet/${id}`)
+            .then((response: AxiosResponse<gamePutGetDto>) => {
+                const model: GameCreationDto = {
+                    title: response.data.game.title,
+                    newlyReleased: response.data.game.newlyReleased,
+                    trailer: response.data.game.trailer,
+                    posterUrl: response.data.game.poster,
+                    summary: response.data.game.summary,
+                    releaseDate: new Date(response.data.game.releaseDate)
+                };
+
+                setGame(model);
+                setGamePutGet(response.data)
+            })
+    }, [id])
+
+    const edit = async(gameToEdit: GameCreationDto) => {
+        try {
+            const formData = convertGameToFormData(gameToEdit);
+            await axios({
+                method: "put",
+                url: `${UrlGames}/${id}`,
+                data: formData,
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                }
+            });
+            history.push(`/game/${id}`);
+        }
+        catch(error) {
+            setErrors(error.response.data);
+        }
+    }
 
     return(
         <>
             <h3>Edit Game Center</h3>
-            <GameForm model={{title: 'Red Dead Redemption 2', newlyReleased: false, trailer: 'url', releaseDate: new Date("2018-01-01T++:00:00")}}
-                onSubmit={values => console.log(values)}
-                nonSelectedGenres={nonSelectedGenres}
-                selectedGenres={selectedGenres}
+            <DisplayErrors errors={errors} />
+            {game && gamePutGet ? 
+            <GameForm model={game}
+                onSubmit={async values => await edit(values)}
+                nonSelectedGenres={gamePutGet.nonSelectedGenres}
+                selectedGenres={gamePutGet.selectedGenres}
                 
-                nonSelectedGameCenters={nonSelectedGameCenters}
-                selectedGameCenters={selectedGameCenters}
-                selectedActors={selectedActors} />
+                nonSelectedGameCenters={gamePutGet.nonSelectedGameCenters}
+                selectedGameCenters={gamePutGet.SelectedGameCenters}
+                selectedActors={gamePutGet.actors} />
+            : null}
         </>
     )
 }
