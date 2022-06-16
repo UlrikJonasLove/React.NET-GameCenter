@@ -19,7 +19,7 @@ export const GameForm = (props: gameFormProps) => {
 
     // mapToModel is a function that takes the form data and converts it to the model
     const mapToModel = (items: {id: number, name: string}[]): multipleSelectorModel[] => {
-        return items?.map((item) => {
+        return items?.map(item => {
             return {key: item.id, value: item.name}
         })
     }
@@ -36,8 +36,8 @@ export const GameForm = (props: gameFormProps) => {
         <Formik
         initialValues={props.model}
         onSubmit={(values, actions) => {
-            values.genresIds = selectedGenres?.map(item => item.key);
-            values.gameCentersIds = selectedGameCenters?.map(item => item.key);
+            values.genreIds = selectedGenres?.map(item => item.key);
+            values.gameCenterIds = selectedGameCenters?.map(item => item.key);
             values.actors = selectedActors;
             props.onSubmit(values, actions);
         }}

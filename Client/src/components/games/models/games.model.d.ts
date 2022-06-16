@@ -16,7 +16,7 @@ export interface GameDto {
 }
 
 export interface LandingPageDto {
-    newlyReleases?: GameDTO[];
+    newlyReleased?: GameDTO[];
     upcomingReleases?: GameDTO[];
 }
 
@@ -28,8 +28,8 @@ export interface GameCreationDto {
     releaseDate?: Date;
     poster?: File;
     posterUrl?: string;
-    genresIds?: number[];
-    gameCentersIds?: number[];
+    genreIds?: number[];
+    gameCenterIds?: number[];
     actors?: actorGameDto[];
 }
 
@@ -37,12 +37,14 @@ export interface filterGamesFormDto {
     title: string;
     genreId: number;
     upcomingReleases: boolean;
-    newlyReleases: boolean;
+    newlyReleased: boolean;
+    page: number;
+    recordsPerPage: number;
 }
 
 export interface gamesPostGetDto {
     genres: genreDTO[];
-    gameCenters: gameCenterDTO[];
+    gameCenter: gameCenterDTO[];
 }
 
 export interface gamePutGetDto {

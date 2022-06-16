@@ -28,7 +28,7 @@ export const Menu = () => {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/games/filter">
+                            <NavLink className="nav-link" to="/games/search">
                                 Search
                             </NavLink>
                         </li>

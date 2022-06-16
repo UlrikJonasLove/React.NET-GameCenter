@@ -51,7 +51,7 @@ export const EditGame = () => {
 
     return(
         <>
-            <h3>Edit Game Center</h3>
+            <h3>Edit Game</h3>
             <DisplayErrors errors={errors} />
             {game && gamePutGet ? 
             <GameForm model={game}

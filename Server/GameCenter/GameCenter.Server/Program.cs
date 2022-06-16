@@ -14,6 +14,10 @@ using AutoMapper;
 using GameCenter.Server.AutoMapper;
 using GameCenter.DataAccess.Repositories.GameCenter;
 using GameCenter.Business.Services.GameCenter;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 

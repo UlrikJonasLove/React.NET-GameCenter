@@ -22,7 +22,7 @@ export const GameDetails = () => {
     const transformCordinates = (): coordinateDto[] => {
         if(game?.gameCenters){
             const coordinates = game.gameCenters.map(gameCenter => {
-                return {lat: gameCenter.lat, lng: gameCenter.lng, name: gameCenter.name} as coordinateDto;
+                return {lat: gameCenter.latitude, lng: gameCenter.longitude, name: gameCenter.name} as coordinateDto;
             });
 
             return coordinates;
@@ -54,7 +54,7 @@ export const GameDetails = () => {
             {game.genres?.map(genre => 
                 <Link key={genre.id} style={{marginRight: '5px'}}
                     className="btn btn-primary btn-sm rounded-pill"
-                    to={`/games/filter?genreId=${genre.id}`}>{genre.name}</Link>)} | {game.releaseDate.toDateString()}
+                    to={`/games/search?genreId=${genre.id}`}>{genre.name}</Link>)} | {game.releaseDate.toDateString()}
 
             <div style={{display: 'flex', marginTop: '1rem'}}>
                 <span style={{display: 'inline-block', marginRight: '1rem'}}>

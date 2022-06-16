@@ -11,7 +11,7 @@ namespace GameCenter.Models.GameCenter
     {
         [Required]
         [StringLength(maximumLength: 75)]
-        public string? Name { get; set; }
+        public string Name { get; set; }
         [Range(-90, 90)]
         public double Latitude { get; set; }
         [Range(-180, 180)]

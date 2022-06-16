@@ -11,7 +11,7 @@ namespace GameCenter.Models.GameCenter
     {
         public int GameCenterId { get; set; }
         public int GameId { get; set; }
-        public GameCenters? GameCenter { get; set; }
-        public Game? Game { get; set; }
+        public GameCenters GameCenter { get; set; }
+        public Game Game { get; set; }
     }
 }

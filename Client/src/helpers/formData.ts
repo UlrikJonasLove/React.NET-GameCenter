@@ -40,11 +40,11 @@ export const convertGameToFormData = (game: GameCreationDto) => {
     }
 
     if(game.poster){
-        formData.append("picture", game.poster);
+        formData.append("poster", game.poster);
     }
 
-    formData.append("genresIds", JSON.stringify(game.genresIds));
-    formData.append("gameCentersIds", JSON.stringify(game.gameCentersIds));
+    formData.append("genreIds", JSON.stringify(game.genreIds));
+    formData.append("gameCenterIds", JSON.stringify(game.gameCenterIds));
     formData.append("actors", JSON.stringify(game.actors));
 
     return formData;
@@ -65,5 +65,5 @@ const formatDate = (date: Date) => {
         { value: day },, 
         { value: year }] = format.formatToParts(date);
 
-        return `${month}/${day}/${year}`;
+        return `${year}/${month}/${day}`;
 }

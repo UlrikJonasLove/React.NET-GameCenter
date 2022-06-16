@@ -11,11 +11,11 @@ namespace GameCenter.Business.DTOs.Games
 {
     public class GamePutGetDto
     {
-        public GameDto? Game { get; set; }
-        public List<GenreDto>? SelectedGenres { get; set; }
-        public List<GenreDto>? NonSelectedGenres { get; set; }
-        public List<GameCenterDto>? SelectedGameCenters { get; set; }
-        public List<GameCenterDto>? NonSelectedGameCenters { get; set; }
-        public List<ActorsGameDto>? Actors { get; set; }
+        public GameDto Game { get; set; }
+        public List<GenreDto> SelectedGenres { get; set; }
+        public List<GenreDto> NonSelectedGenres { get; set; }
+        public List<GameCenterDto> SelectedGameCenters { get; set; }
+        public List<GameCenterDto> NonSelectedGameCenters { get; set; }
+        public List<ActorsGameDto> Actors { get; set; }
     }
 }

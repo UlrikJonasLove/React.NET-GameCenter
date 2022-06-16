@@ -20,9 +20,7 @@ namespace GameCenter.DataAccess.Repositories.Genres
 
         public async Task<Genre> GetGenreByIdAsync(int id)
         {
-#pragma warning disable CS8603 // Possible null reference return.
             return await context.Genres.FirstOrDefaultAsync(x => x.Id == id);
-#pragma warning restore CS8603 // Possible null reference return.
         }
 
         public void AddGenres(Genre genre)

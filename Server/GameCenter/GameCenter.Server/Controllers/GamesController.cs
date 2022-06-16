@@ -2,12 +2,16 @@
 using GameCenter.Business.DTOs.GameCenters;
 using GameCenter.Business.DTOs.Games;
 using GameCenter.Business.DTOs.Genres;
+using GameCenter.Business.Helpers;
 using GameCenter.Business.Helpers.FileStorage;
 using GameCenter.DataAccess.Data;
 using GameCenter.Models.Games;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GameCenter.Server.Controllers
 {
@@ -55,23 +59,59 @@ namespace GameCenter.Server.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<GameDto>> Get(int id)
         {
-#pragma warning disable CS8620 // Argument cannot be used for parameter due to differences in the nullability of reference types.
             var game = await context.Games
                 .Include(x => x.GamesGenres).ThenInclude(x => x.Genre)
                 .Include(x => x.GameCentersGame).ThenInclude(x => x.GameCenter)
                 .Include(x => x.GamesActors).ThenInclude(x => x.Actor)
                 .FirstOrDefaultAsync(x => x.Id == id);
-#pragma warning restore CS8620 // Argument cannot be used for parameter due to differences in the nullability of reference types.
 
             if (game == null)
+            {
                 return NotFound();
+            }
+                
 
             var dto = mapper.Map<GameDto>(game);
-#pragma warning disable CS8604 // Possible null reference argument.
             dto.Actors = dto.Actors.OrderBy(x => x.Order).ToList();
-#pragma warning restore CS8604 // Possible null reference argument.
 
             return dto;
+        }
+
+        [HttpGet("filter")]
+        public async Task<ActionResult<List<GameDto>>> Filter([FromQuery] GameFilterDto gameFilter)
+        {
+            var gamesQueryable = context.Games.AsQueryable();
+
+            if (!string.IsNullOrEmpty(gameFilter.Title))
+            {
+                gamesQueryable = gamesQueryable.Where(x => x.Title.Contains(gameFilter.Title));
+            }
+
+            if(gameFilter.NewlyReleased)
+            {
+                gamesQueryable = gamesQueryable.Where(x => x.NewlyReleased);
+            }
+
+            if (gameFilter.UpcomingReleases)
+            {
+                var today = DateTime.Today;
+                gamesQueryable = gamesQueryable.Where(x => x.ReleaseDate > today);
+            }
+
+            if(gameFilter.GenreId != 0)
+            {
+                gamesQueryable = gamesQueryable
+                    .Where(x => x.GamesGenres.Select(y => y.GenreId)
+                    .Contains(gameFilter.GenreId));
+            }
+
+            await HttpContext.InsertParametersPaginationInHeader(gamesQueryable);
+            var games = await gamesQueryable
+                .OrderBy(x => x.Title)
+                .Paginate(gameFilter.PaginationDto)
+                .ToListAsync();
+
+            return mapper.Map<List<GameDto>>(games);
         }
 
         [HttpGet("postget")]
@@ -108,20 +148,17 @@ namespace GameCenter.Server.Controllers
         {
             var gameActionResult = await Get(id);
             if (gameActionResult.Result is NotFoundResult)
+            {
                 return NotFound();
-
+            }
+               
             var game = gameActionResult.Value;
-
-#pragma warning disable CS8604 // Possible null reference argument.
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
             var genreSelectedIds = game.Genres.Select(x => x.Id).ToList();
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
-#pragma warning restore CS8604 // Possible null reference argument.
             var nonSelectedGenres = await context.Genres.Where(x => !genreSelectedIds.Contains(x.Id)).ToListAsync();
 
-#pragma warning disable CS8604 // Possible null reference argument.
             var gameCentersIds = game.GameCenters.Select(x => x.Id).ToList();
-#pragma warning restore CS8604 // Possible null reference argument.
             var nonSelectedGameCenters = await context.GameCenters.Where(x => !gameCentersIds.Contains(x.Id)).ToListAsync();
 
             var nonSelectedGenresDtos = mapper.Map<List<GenreDto>>(nonSelectedGenres);
@@ -152,9 +189,10 @@ namespace GameCenter.Server.Controllers
             game = mapper.Map(gameCreation, game);
 
             if (gameCreation.Poster != null)
-#pragma warning disable CS8604 // Possible null reference argument.
+            {
                 game.Poster = await fileStorage.EditFile($"{containerName}/{gameCreation.Title}", gameCreation.Poster, game.Poster);
-#pragma warning restore CS8604 // Possible null reference argument.
+            }
+                
 
             AnnotateActorsOrder(game);
 
@@ -171,6 +209,21 @@ namespace GameCenter.Server.Controllers
                     game.GamesActors[i].Order = i;
                 }
             }
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var game = await context.Games.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (game == null)
+                return NotFound();
+
+            context.Remove(game);
+            await context.SaveChangesAsync();
+            await fileStorage.DeleteFile(game.Poster, containerName);
+
+            return NoContent();
         }
     }
 }

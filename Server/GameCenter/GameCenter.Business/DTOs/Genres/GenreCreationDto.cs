@@ -2,6 +2,6 @@
 {
     public class GenreCreationDto
     {
-        public string? Name { get; set; }
+        public string Name { get; set; }
     }
 }

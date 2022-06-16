@@ -11,16 +11,17 @@ namespace GameCenter.Business.DTOs.Games
 {
     public class GameCreationDto
     {
-        public string? Title { get; set; }
-        public string? Trailer { get; set; }
-        public bool? NewlyReleased { get; set; }
+        public string Title { get; set; }
+        public string Summary { get; set; }
+        public string Trailer { get; set; }
+        public bool NewlyReleased { get; set; }
         public DateTime ReleaseDate { get; set; }
-        public IFormFile? Poster { get; set; }
-        [ModelBinder(BinderType = typeof(TypeBinder<int>))]
-        public List<int>? GenreIds { get; set; }
-        [ModelBinder(BinderType = typeof(TypeBinder<int>))]
-        public List<int>? GameCenterIds { get; set; }
-        [ModelBinder(BinderType = typeof(TypeBinder<GameActorsCreationDto>))]
-        public List<GameActorsCreationDto>? Actors { get; set; }
+        public IFormFile Poster { get; set; }
+        [ModelBinder(BinderType = typeof(TypeBinder<List<int>>))]
+        public List<int> GenreIds { get; set; }
+        [ModelBinder(BinderType = typeof(TypeBinder<List<int>>))]
+        public List<int> GameCenterIds { get; set; }
+        [ModelBinder(BinderType = typeof(TypeBinder<List<GameActorsCreationDto>>))]
+        public List<GameActorsCreationDto> Actors { get; set; }
     }
 }

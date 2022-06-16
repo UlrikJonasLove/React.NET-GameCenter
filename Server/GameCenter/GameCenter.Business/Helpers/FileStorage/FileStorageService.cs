@@ -56,9 +56,7 @@ namespace GameCenter.Business.Helpers.FileStorage
                 await File.WriteAllBytesAsync(route, content);
             }
 
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             var url = $"{httpContextAccessor.HttpContext.Request.Scheme}://{httpContextAccessor.HttpContext.Request.Host}";
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
             var routeForDb = Path.Combine(url, containerName, fileName).Replace("\\", "/");
 

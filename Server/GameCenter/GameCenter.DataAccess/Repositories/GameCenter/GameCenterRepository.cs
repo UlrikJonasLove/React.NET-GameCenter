@@ -20,9 +20,7 @@ namespace GameCenter.DataAccess.Repositories.GameCenter
 
         public async Task<GameCenters> GetGameCenterByIdAsync(int id)
         {
-#pragma warning disable CS8603 // Possible null reference return.
             return await context.GameCenters.FirstOrDefaultAsync(x => x.Id == id);
-#pragma warning restore CS8603 // Possible null reference return.
         }
 
         public void AddGameCenter(GameCenters gameCenter)

@@ -7,6 +7,9 @@ using GameCenter.Models.Genres;
 using GameCenter.Business.Services.Genres;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GameCenter.Server.Controllers
 {
@@ -15,16 +18,21 @@ namespace GameCenter.Server.Controllers
     public class GenresController : ControllerBase
     {
         private readonly IGenreService service;
-        private readonly ILogger<GenresController> logger;
         private readonly AppDbContext context;
         private readonly IMapper mapper;
 
-        public GenresController(IGenreService service, ILogger<GenresController> logger, AppDbContext context, IMapper mapper)
+        public GenresController(IGenreService service, AppDbContext context, IMapper mapper)
         {
             this.service = service;
-            this.logger = logger;
             this.context = context;
             this.mapper = mapper;
+        }
+
+        [HttpGet("all")]
+        public async Task<ActionResult<List<GenreDto>>> Get()
+        {
+            var genres = await context.Genres.OrderBy(x => x.Name).ToListAsync();
+            return mapper.Map<List<GenreDto>>(genres);
         }
 
         [HttpGet]

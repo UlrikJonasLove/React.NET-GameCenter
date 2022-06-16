@@ -8,6 +8,7 @@ using GameCenter.Models.GameCenter;
 using GameCenter.Models.Games;
 using GameCenter.Models.Genres;
 using NetTopologySuite.Geometries;
+using System.Collections.Generic;
 
 namespace GameCenter.Server.AutoMapper
 {
@@ -22,11 +23,9 @@ namespace GameCenter.Server.AutoMapper
             CreateMap<ActorCreationDto, Actor>()
                 .ForMember(x => x.Picture, option => option.Ignore());
 
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             CreateMap<GameCenters, GameCenterDto>()
                 .ForMember(x => x.Latitude, dto => dto.MapFrom(prop => prop.Location.Y))
                 .ForMember(x => x.Longitude, dto => dto.MapFrom(prop => prop.Location.X));
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
             CreateMap<GameCenterCreationDto, GameCenters>()
                 .ForMember(x => x.Location, x => x.MapFrom(dto =>
@@ -52,7 +51,6 @@ namespace GameCenter.Server.AutoMapper
             {
                 foreach (var actors in game.GamesActors)
                 {
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
                     result.Add(new ActorsGameDto()
                     {
                         Id = actors.ActorId,
@@ -61,7 +59,6 @@ namespace GameCenter.Server.AutoMapper
                         Picture = actors.Actor.Picture,
                         Order = actors.Order
                     });
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
                 }
             }
 
@@ -76,13 +73,11 @@ namespace GameCenter.Server.AutoMapper
             {
                 foreach (var gameCentersGames in game.GameCentersGame)
                 {
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
                     result.Add(new GameCenterDto() { Id = gameCentersGames.GameCenterId, 
                         Name = gameCentersGames.GameCenter.Name,
                         Latitude = gameCentersGames.GameCenter.Location.Y,
                         Longitude = gameCentersGames.GameCenter.Location.X
                        });
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
                 }
             }
 
@@ -97,9 +92,7 @@ namespace GameCenter.Server.AutoMapper
             {
                 foreach (var genre in game.GamesGenres)
                 {
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
                     result.Add(new GenreDto() { Id = genre.GenreId, Name = genre.Genre.Name });
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
                 }
             }
 
@@ -111,7 +104,10 @@ namespace GameCenter.Server.AutoMapper
             var result = new List<GamesGenres>();
 
             if (gameCreation.GenreIds == null)
+            {
                 return result;
+            }
+                
 
             foreach (var genreId in gameCreation.GenreIds)
             {
@@ -126,7 +122,10 @@ namespace GameCenter.Server.AutoMapper
             var result = new List<GameCentersGames>();
 
             if (gameCreation.GameCenterIds == null)
+            {
                 return result;
+            }
+                
 
             foreach (var gameCentersid in gameCreation.GameCenterIds)
             {
@@ -141,7 +140,10 @@ namespace GameCenter.Server.AutoMapper
             var result = new List<GamesActors>();
 
             if (gameCreation.Actors == null)
+            {
                 return result;
+            }
+                
 
             foreach (var actor in gameCreation.Actors)
             {

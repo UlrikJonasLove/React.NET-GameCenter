@@ -15,13 +15,14 @@ namespace GameCenter.Models.Games
         public int Id { get; set; }
         [StringLength(maximumLength: 75)]
         [Required]
-        public string? Title { get; set; }
-        public string? Trailer { get; set; }
+        public string Title { get; set; }
+        public string Summary { get; set; }
+        public string Trailer { get; set; }
         public bool NewlyReleased { get; set; }
         public DateTime ReleaseDate { get; set; }
-        public string? Poster { get; set; }
-        public List<GamesGenres>? GamesGenres { get; set; }
-        public List<GameCentersGames>? GameCentersGame { get; set; }
-        public List<GamesActors>? GamesActors { get; set; }
+        public string Poster { get; set; }
+        public List<GamesGenres> GamesGenres { get; set; }
+        public List<GameCentersGames> GameCentersGame { get; set; }
+        public List<GamesActors> GamesActors { get; set; }
     }
 }

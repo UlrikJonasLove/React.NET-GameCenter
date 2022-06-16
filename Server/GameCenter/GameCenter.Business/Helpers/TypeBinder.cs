@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GameCenter.Business.Helpers
 {
-    internal class TypeBinder<T> : IModelBinder
+    public class TypeBinder<T> : IModelBinder
     {
         public Task BindModelAsync(ModelBindingContext bindingContext)
         {
@@ -23,9 +23,7 @@ namespace GameCenter.Business.Helpers
             {
                 try
                 {
-    #pragma warning disable CS8604 // Possible null reference argument.
                     var deserializedValue = JsonConvert.DeserializeObject<T>(value.FirstValue);
-    #pragma warning restore CS8604 // Possible null reference argument.
                     bindingContext.Result = ModelBindingResult.Success(deserializedValue);
                 }
                 catch

@@ -27,7 +27,7 @@ export const CreateGame = () => {
         axios.get(`${UrlGames}/postget`)
             .then((response: AxiosResponse<gamesPostGetDto>) => {
                 setNonSelectedGenres(response.data.genres)
-                setNonSelectedGameCenters(response.data.gameCenters)
+                setNonSelectedGameCenters(response.data.gameCenter)
                 setLoading(false);
             })
     }, []) // an empty array means this useEffect will only run once, when the component is mounted

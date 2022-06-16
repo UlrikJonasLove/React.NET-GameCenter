@@ -31,7 +31,7 @@ export const routes = [
     {path: "/gamecenters/create", component: CreateGameCenter},
     {path: "/gamecenters/edit/:id(\\d+)", component: EditGameCenter},
 
-    {path: "/games/filter", component: FilterGame},
+    {path: "/games/search", component: FilterGame},
     {path: "/game/create", component: CreateGame},
     {path: "/game/edit/:id(\\d+)", component: EditGame},
     {path: "/game/:id(\\d+)", component: GameDetails},

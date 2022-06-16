@@ -8,7 +8,7 @@ namespace GameCenter.Business.DTOs.Games
 {
     public class GameLandingPageDto
     {
-        public List<GameDto>? NewlyReleased { get; set; }
-        public List<GameDto>? UpcomingReleases { get; set; }
+        public List<GameDto> NewlyReleased { get; set; }
+        public List<GameDto> UpcomingReleases { get; set; }
     }
 }

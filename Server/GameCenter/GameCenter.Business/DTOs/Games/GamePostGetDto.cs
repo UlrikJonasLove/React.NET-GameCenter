@@ -10,7 +10,7 @@ namespace GameCenter.Business.DTOs.Games
 {
     public class GamePostGetDto
     {
-        public List<GenreDto>? Genres { get; set; }
-        public List<GameCenterDto>? GameCenter { get; set; }
+        public List<GenreDto> Genres { get; set; }
+        public List<GameCenterDto> GameCenter { get; set; }
     }
 }

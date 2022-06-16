@@ -8,6 +8,9 @@ using GameCenter.DataAccess.Data;
 using GameCenter.Models.Actors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GameCenter.Server.Controllers
 {
@@ -57,14 +60,12 @@ namespace GameCenter.Server.Controllers
             if (string.IsNullOrWhiteSpace(query))
                 return new List<ActorsGameDto>();
 
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             return await context.Actors
                 .Where(x => x.Name.Contains(query))
                 .OrderBy(x => x.Name)
                 .Select(x => new ActorsGameDto { Id = x.Id, Name = x.Name, Picture = x.Picture })
                 .Take(5)
                 .ToListAsync();
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
         }
 
         [HttpPost]
@@ -93,9 +94,7 @@ namespace GameCenter.Server.Controllers
 
             if(actorCreation.Picture != null)
             {
-#pragma warning disable CS8604 // Possible null reference argument.
                 actor.Picture = await fileStorage.EditFile($"{containerName}/{actor.Name}", actorCreation.Picture, actor.Picture);
-#pragma warning restore CS8604 // Possible null reference argument.
             }
 
             await service.SaveActorAsync();
@@ -114,11 +113,9 @@ namespace GameCenter.Server.Controllers
 
             service.DeleteActor(actor);
             await service.SaveActorAsync();
-#pragma warning disable CS8604 // Possible null reference argument.
             await fileStorage.DeleteFile(actor.Picture, containerName);
-#pragma warning restore CS8604 // Possible null reference argument.
+
             return NoContent();
         }
-
     }
 }

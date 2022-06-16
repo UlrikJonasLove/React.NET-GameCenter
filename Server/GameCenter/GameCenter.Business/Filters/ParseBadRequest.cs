@@ -20,12 +20,9 @@ namespace GameCenter.Business.Filters
             {
                 var response = new List<string>();
                 var badRequestObjectResult = context.Result as BadRequestObjectResult;
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
                 if (badRequestObjectResult.Value is string)
                 {
-#pragma warning disable CS8604 // Possible null reference argument.
                     response.Add(badRequestObjectResult.Value.ToString());
-#pragma warning restore CS8604 // Possible null reference argument.
                 }
                 else if (badRequestObjectResult.Value is IEnumerable<IdentityError> errors)
                 {
