@@ -8,6 +8,7 @@ import axios from "axios";
 import { UrlGames } from "../../constants/endpoints";
 import { useContext } from "react";
 import { AlertContext } from "../../helpers/alertContext";
+import { Authorized } from "../auth/Authorized";
 
 export const IndividualGame = (props: GameDto) => {
     const buildLink = () => `/game/${props.id}`
@@ -28,10 +29,15 @@ export const IndividualGame = (props: GameDto) => {
             <p>
                 <Link to={buildLink()}>{props.title}</Link>
             </p>
-            <section>
-                <Link style={{marginRight: '1rem'}} className="btn btn-info" to={`/game/edit/${props.id}`}>Edit</Link>
-                <Button onClick={() => customConfirm(() => onDelete(), `${Delete} ${props.title}`, `${Delete}`)}>Delete</Button>
-            </section>
+            <Authorized 
+                role="admin"
+                authorized={<>
+                    <section>
+                        <Link style={{marginRight: '1rem'}} className="btn btn-info" to={`/game/edit/${props.id}`}>Edit</Link>
+                        <Button onClick={() => customConfirm(() => onDelete(), `${Delete} ${props.title}`, `${Delete}`)}>Delete</Button>
+                    </section>
+                </>} />
+            
         </article>
     )
 }

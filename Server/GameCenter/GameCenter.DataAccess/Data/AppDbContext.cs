@@ -10,10 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GameCenter.Models.Games;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace GameCenter.DataAccess.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext
     {
         public AppDbContext([NotNull] DbContextOptions options) : base(options)
         { }
@@ -29,6 +30,7 @@ namespace GameCenter.DataAccess.Data
             builder.Entity<GameCentersGames>()
                 .HasKey(x => new { x.GameCenterId, x.GameId });
 
+            // IdentityDbContext is expecting to be called through this OnModelCreating
             base.OnModelCreating(builder);
         }
 
