@@ -7,9 +7,10 @@ import { AuthForm } from "./AuthForm";
 import { UrlAuth } from "../../constants/endpoints";
 import { Link, useHistory } from "react-router-dom";
 import { getClaim, saveToken } from "../../helpers/auth/handleJwt";
+import { title } from "../../constants/GameCenterVariables";
 
 export const Register = () => {
-    document.title = `Game Center - Sign Up`;
+    document.title = `${title} - Sign Up`;
 
     const history = useHistory();
     const [errors, setErrors] = useState<string[]>([]);

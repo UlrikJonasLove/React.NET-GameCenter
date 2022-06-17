@@ -1,12 +1,17 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { admin } from "../../constants/GameCenterVariables";
 import { AuthContext } from "../../helpers/auth/authContext";
 import { logout } from "../../helpers/auth/handleJwt";
 import { Authorized } from "../auth/Authorized";
 import { Button } from "../utils/Button";
 
 export const Menu = () => {
+    // this useContext is used to access the AuthContext
+    // and gets the claims and the update function from the context
     const {update, claims} = useContext(AuthContext);
+
+    // this function gets the users email claim 
     const getUserEmail = () : string => {
         return claims.filter(x => x.name === "email")[0]?.value;
     }
@@ -20,7 +25,7 @@ export const Menu = () => {
                         style={{display: 'flex', justifyContent: 'space-between'}}>
 
                     <Authorized 
-                        role="admin"
+                        role={admin}
                         authorized={<>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/game/create">

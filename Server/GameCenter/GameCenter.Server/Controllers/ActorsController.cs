@@ -6,6 +6,8 @@ using GameCenter.Business.Helpers.FileStorage;
 using GameCenter.Business.Services.Actors;
 using GameCenter.DataAccess.Data;
 using GameCenter.Models.Actors;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -16,6 +18,7 @@ namespace GameCenter.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "IsAdmin")]
     public class ActorsController : ControllerBase
     {
         private readonly IMapper mapper;

@@ -20,5 +20,7 @@ namespace GameCenter.Business.DTOs.Games
         public List<GenreDto> Genres { get; set; }
         public List<GameCenterDto> GameCenters { get; set; }
         public List<ActorsGameDto> Actors { get; set; }
+        public double AverageVote { get; set; }
+        public int UserVote { get; set; }
     }
 }

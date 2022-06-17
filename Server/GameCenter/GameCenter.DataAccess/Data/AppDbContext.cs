@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GameCenter.Models.Games;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using GameCenter.Models.Rating;
 
 namespace GameCenter.DataAccess.Data
 {
@@ -41,5 +42,6 @@ namespace GameCenter.DataAccess.Data
         public DbSet<GamesActors> GamesActors { get; set; }
         public DbSet<GamesGenres> GamesGenres { get; set; }
         public DbSet<GameCentersGames> GameCentersGames { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
     }
 }

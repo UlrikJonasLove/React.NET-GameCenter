@@ -2,11 +2,14 @@ import axios, { AxiosResponse } from "axios"
 import { useEffect, useState } from "react"
 import ReactMarkdown from "react-markdown";
 import { Link, useParams } from "react-router-dom";
-import { UrlGames } from "../../constants/endpoints"
+import { UrlGames, UrlRatings } from "../../constants/endpoints"
 import { Loading } from "../utils/Loading";
 import { coordinateDto } from "../utils/models/utils.models";
 import { GameDto } from "./models/games.model";
 import Map from "../utils/Map";
+import { title } from "../../constants/GameCenterVariables";
+import { Ratings } from "../utils/ratings";
+import Swal from "sweetalert2";
 
 export const GameDetails = () => {
     const {id}: any = useParams();
@@ -19,6 +22,9 @@ export const GameDetails = () => {
             })
     }, [id])
 
+    var headtitle = game?.title ? game.title : "Loading game";
+    document.title = `${title} - ${headtitle}`;
+
     const transformCordinates = (): coordinateDto[] => {
         if(game?.gameCenters){
             const coordinates = game.gameCenters.map(gameCenter => {
@@ -30,7 +36,7 @@ export const GameDetails = () => {
 
         return [];
     }
-
+    
     // the generateEmbededVideoUrl function is used to generate the url of the video
     // the url is generated using the id of the video
     // the url is then used to generate the iframe
@@ -48,13 +54,25 @@ export const GameDetails = () => {
         return `https://www.youtube.com/embed/${videoId}`;
     }
 
+    const handleRate = (rate: number) => {
+        axios.post(UrlRatings, {rating: rate, gameId: id}).then(() => {
+            Swal.fire({icon: "success", text: "Rating saved"});
+        })
+    }
+
     return (
         game ? <article>
             <h2>{game.title} ({game.releaseDate.getFullYear()})</h2>
             {game.genres?.map(genre => 
                 <Link key={genre.id} style={{marginRight: '5px'}}
                     className="btn btn-primary btn-sm rounded-pill"
-                    to={`/games/search?genreId=${genre.id}`}>{genre.name}</Link>)} | {game.releaseDate.toDateString()}
+                    to={`/games/search?genreId=${genre.id}`}>{genre.name}</Link>
+                    )} | {game.releaseDate.toDateString()} 
+                    | Your vote: 
+                        <Ratings 
+                        maximumValue={5} 
+                        selectedValue={game.userVote} 
+                        onChange={handleRate} /> | Average vote: {game.averageVote}
 
             <div style={{display: 'flex', marginTop: '1rem'}}>
                 <span style={{display: 'inline-block', marginRight: '1rem'}}>

@@ -3,6 +3,7 @@ import { Field, Form, Formik } from "formik"
 import { useEffect, useState } from "react"
 import { useHistory, useLocation } from "react-router-dom"
 import { UrlGames, UrlGenres } from "../../constants/endpoints"
+import { title } from "../../constants/GameCenterVariables"
 import { genreDTO } from "../genres/models/Genres.model"
 import { Button } from "../utils/Button"
 import { Pagination } from "../utils/Pagination"
@@ -10,7 +11,7 @@ import { GamesList } from "./GamesList"
 import { filterGamesFormDto, GameDto } from "./models/games.model"
 
 export const FilterGame = () => {
-    document.title = "Game Center - Search"
+    document.title = `${title} - Search Games`
     const history = useHistory();
 
     const initialValue: filterGamesFormDto = {

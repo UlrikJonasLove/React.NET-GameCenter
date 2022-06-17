@@ -3,4 +3,5 @@ export const UrlAuth = `${baseUrl}/Auth`;
 export const UrlGenres = `${baseUrl}/Genres`;
 export const UrlActors = `${baseUrl}/Actors`;
 export const UrlGames = `${baseUrl}/Games`;
+export const UrlRatings = `${baseUrl}/Ratings`;
 export const UrlGameCenters = `${baseUrl}/GameCenters`;

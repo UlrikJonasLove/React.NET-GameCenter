@@ -2,11 +2,14 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { UrlGenres } from '../../constants/endpoints';
+import { title } from '../../constants/GameCenterVariables';
 import { DisplayErrors } from '../errorHandling/DisplayErrors';
 import { GenreForm } from './GenreForm'
 import { genreCreationDTO } from './models/Genres.model';
 
 export const CreateGenre = () => {
+    document.title = `${title} - Create Genre`
+
     const history = useHistory();
     const [errors, setErrors] = useState<string[]>([]);
 

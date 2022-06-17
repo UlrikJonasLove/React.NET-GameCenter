@@ -6,6 +6,10 @@ using GameCenter.Business.Helpers;
 using GameCenter.Business.Helpers.FileStorage;
 using GameCenter.DataAccess.Data;
 using GameCenter.Models.Games;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -17,21 +21,25 @@ namespace GameCenter.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "IsAdmin")]
     public class GamesController : ControllerBase
     {
         private readonly AppDbContext context;
         private readonly IMapper mapper;
         private readonly IFileStorageService fileStorage;
+        private readonly UserManager<IdentityUser> userManager;
         private string containerName = "games";
 
-        public GamesController(AppDbContext context, IMapper mapper, IFileStorageService fileStorage)
+        public GamesController(AppDbContext context, IMapper mapper, IFileStorageService fileStorage, UserManager<IdentityUser> userManager)
         {
             this.context = context;
             this.mapper = mapper;
             this.fileStorage = fileStorage;
+            this.userManager = userManager;
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<GameLandingPageDto>> Get()
         {
             var top = 6;
@@ -57,6 +65,7 @@ namespace GameCenter.Server.Controllers
         }
 
         [HttpGet("{id:int}")]
+        [AllowAnonymous]
         public async Task<ActionResult<GameDto>> Get(int id)
         {
             var game = await context.Games
@@ -69,15 +78,42 @@ namespace GameCenter.Server.Controllers
             {
                 return NotFound();
             }
-                
+
+            var averageVote = 0.0;
+            var userVote = 0;
+               
+            if(await context.Ratings.AnyAsync(x => x.GameId == id))
+            {
+                averageVote = await context.Ratings.Where(x => x.GameId == id)
+                    .AverageAsync(x => x.Rate);
+
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+                if (HttpContext.User.Identity.IsAuthenticated)
+                {
+                    var email = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "email").Value;
+                    var user = await userManager.FindByEmailAsync(email);
+                    var userId = user.Id;
+
+                    var ratingDb = await context.Ratings.FirstOrDefaultAsync(x => x.GameId == id && x.UserId == userId);
+
+                    if(ratingDb != null)
+                    {
+                        userVote = ratingDb.Rate;
+                    }
+                }
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+            }
 
             var dto = mapper.Map<GameDto>(game);
+            dto.AverageVote = averageVote;
+            dto.UserVote = userVote;
             dto.Actors = dto.Actors.OrderBy(x => x.Order).ToList();
 
             return dto;
         }
 
         [HttpGet("filter")]
+        [AllowAnonymous]
         public async Task<ActionResult<List<GameDto>>> Filter([FromQuery] GameFilterDto gameFilter)
         {
             var gamesQueryable = context.Games.AsQueryable();

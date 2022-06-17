@@ -6,8 +6,10 @@ import { useHistory, useParams } from "react-router-dom"
 import { GameCreationDto, gamePutGetDto } from "./models/games.model"
 import { convertGameToFormData } from "../../helpers/formData"
 import { DisplayErrors } from "../errorHandling/DisplayErrors"
+import { title } from "../../constants/GameCenterVariables"
 
 export const EditGame = () => {
+    document.title = `${title} - Edit Game`
     const history = useHistory();
     const {id}:any = useParams()
     const [game, setGame] = useState<GameCreationDto>();

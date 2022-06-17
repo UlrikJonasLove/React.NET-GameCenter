@@ -9,8 +9,10 @@ import { Loading } from "../utils/Loading"
 import { convertGameToFormData } from "../../helpers/formData"
 import { useHistory } from "react-router-dom"
 import { DisplayErrors } from "../errorHandling/DisplayErrors"
+import { title } from "../../constants/GameCenterVariables"
 
 export const CreateGame = () => {
+    document.title = `${title} - Create Game`
     const history = useHistory();
 
     // the default value of nonSelectedGenres is an empty array

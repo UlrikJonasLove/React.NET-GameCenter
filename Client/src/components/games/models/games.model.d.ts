@@ -13,6 +13,8 @@ export interface GameDto {
     genres: genreDTO[];
     gameCenters: numgameCenterDTOber[];
     actors: actorGameDto[];
+    userVote: number;
+    averageVote: number;
 }
 
 export interface LandingPageDto {

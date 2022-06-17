@@ -1,4 +1,5 @@
 export const title = "Game Center";
+export const admin = "admin";
 export const activeYear = new Date().getFullYear().toString();
 export const Delete = "Delete";
 

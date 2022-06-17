@@ -2,11 +2,13 @@ import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { UrlGameCenters } from "../../constants/endpoints";
+import { title } from "../../constants/GameCenterVariables";
 import { DisplayErrors } from "../errorHandling/DisplayErrors";
 import GameCenterForm from "./GameCenterForm";
 import { gameCenterCreationDTO } from "./models/GameCenterDTO.model";
 
 export const CreateGameCenter  = () => {
+    document.title = `${title} - Create Game Center`
     const history = useHistory();
     const [errors, setErrors] = useState<string[]>([]);
 

@@ -1,13 +1,14 @@
 import axios, { AxiosResponse } from "axios";
 import { useEffect, useState } from "react";
 import { UrlGames } from "../../constants/endpoints";
+import { title } from "../../constants/GameCenterVariables";
 import { AlertContext } from "../../helpers/alertContext";
 import { GamesList } from "./GamesList";
 import { LandingPageDto } from "./models/games.model";
 
 export const LandingPage = () =>{
 
-    document.title = "Game Center - Home"
+    document.title = `${title} - Home`;
     const [Games, setGames] = useState<LandingPageDto>({})
 
   useEffect(() => {

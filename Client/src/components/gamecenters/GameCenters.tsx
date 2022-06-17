@@ -1,10 +1,10 @@
 import { UrlGameCenters } from "../../constants/endpoints"
-import { Delete } from "../../constants/GameCenterVariables"
+import { Delete, title } from "../../constants/GameCenterVariables"
 import { IndexEntity } from "../utils/IndexEntity"
 import { gameCenterDTO } from "./models/GameCenterDTO.model"
 
 export const GameCenters = () => {
-    document.title = "Game Center - Game Centers"
+    document.title = `${title} - ${title}s`
     return(
         <IndexEntity<gameCenterDTO>
             url={UrlGameCenters} createUrl="gamecenters/create" title="Game Centers" entityName="Game Centers">

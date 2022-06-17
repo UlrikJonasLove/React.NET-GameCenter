@@ -6,10 +6,12 @@ import { RedirectToLandingPage } from './components/utils/RedirectToLandingPage'
 import { routes } from './constants/route-config';
 import { AuthContext } from './helpers/auth/authContext';
 import { getClaim } from './helpers/auth/handleJwt';
+import { configureInterceptor } from './helpers/http/httpInterceptor';
 import { claim } from './models/auth/auth.models';
 import configureValidations from './Validations';
 
 configureValidations();
+configureInterceptor();
 
 export const App = () => {
 
