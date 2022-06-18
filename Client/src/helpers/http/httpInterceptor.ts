@@ -7,7 +7,7 @@ export const configureInterceptor = () => {
             const token = getToken();
 
             if(token) {
-                config.headers!.Authorization = `Bearer ${token}`;
+                config.headers.Authorization = `bearer ${token}`;
             }
 
             return config;

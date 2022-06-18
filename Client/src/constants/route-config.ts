@@ -19,6 +19,7 @@ import { RedirectToLandingPage } from "../components/utils/RedirectToLandingPage
 import { GameDetails } from "../components/games/GameDetails";
 import { Register } from "../components/auth/Register";
 import { Login } from "../components/auth/Login";
+import { Users } from "../components/users/Users";
 
 export const routes = [
     {path: "/genres", component: Genres, exact: true, isAdmin: true},
@@ -40,6 +41,8 @@ export const routes = [
 
     {path: "/sign-up", component: Register},
     {path: "/sign-in", component: Login},
+
+    {path: "/users", component: Users},
 
     {path: "/", component: LandingPage, exact: true},
     {path: "*", component: RedirectToLandingPage}

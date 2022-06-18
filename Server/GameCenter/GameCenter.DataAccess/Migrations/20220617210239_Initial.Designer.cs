@@ -13,8 +13,8 @@ using NetTopologySuite.Geometries;
 namespace GameCenter.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220617150621_Ratings")]
-    partial class Ratings
+    [Migration("20220617210239_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

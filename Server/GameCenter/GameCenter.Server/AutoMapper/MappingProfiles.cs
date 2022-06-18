@@ -3,10 +3,12 @@ using GameCenter.Business.DTOs.Actors;
 using GameCenter.Business.DTOs.GameCenters;
 using GameCenter.Business.DTOs.Games;
 using GameCenter.Business.DTOs.Genres;
+using GameCenter.Business.DTOs.User;
 using GameCenter.Models.Actors;
 using GameCenter.Models.GameCenter;
 using GameCenter.Models.Games;
 using GameCenter.Models.Genres;
+using Microsoft.AspNetCore.Identity;
 using NetTopologySuite.Geometries;
 using System.Collections.Generic;
 
@@ -41,6 +43,8 @@ namespace GameCenter.Server.AutoMapper
                 .ForMember(x => x.Genres, options => options.MapFrom(MapGamesGenres))
                 .ForMember(x => x.GameCenters, options => options.MapFrom(MapGameCentersGames))
                 .ForMember(x => x.Actors, options => options.MapFrom(MapGamesActors));
+
+            CreateMap<IdentityUser, UserDto>();
         }
 
         private List<ActorsGameDto> MapGamesActors(Game game, GameDto gameDto)

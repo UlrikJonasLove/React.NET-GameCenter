@@ -1,5 +1,6 @@
 const baseUrl = process.env.REACT_APP_API_URL;
 export const UrlAuth = `${baseUrl}/Auth`;
+export const UrlUsers = `${baseUrl}/User`;
 export const UrlGenres = `${baseUrl}/Genres`;
 export const UrlActors = `${baseUrl}/Actors`;
 export const UrlGames = `${baseUrl}/Games`;

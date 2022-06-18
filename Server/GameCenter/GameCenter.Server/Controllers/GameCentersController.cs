@@ -5,6 +5,8 @@ using GameCenter.Business.Helpers;
 using GameCenter.Business.Services.GameCenter;
 using GameCenter.DataAccess.Data;
 using GameCenter.Models.GameCenter;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +18,7 @@ namespace GameCenter.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "IsAdmin")]
     public class GameCentersController : ControllerBase
     {
         private readonly IMapper mapper;

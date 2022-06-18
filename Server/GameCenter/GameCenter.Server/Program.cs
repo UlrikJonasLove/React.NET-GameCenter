@@ -28,6 +28,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString, sqlOption => 
@@ -89,7 +90,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("IsAdmin", policy => policy.RequireClaim("role", "claim"));
+    options.AddPolicy("IsAdmin", policy => policy.RequireClaim("role", "admin"));
 });
 
 var app = builder.Build();

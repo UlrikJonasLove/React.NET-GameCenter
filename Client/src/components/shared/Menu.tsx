@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { admin } from "../../constants/GameCenterVariables";
 import { AuthContext } from "../../helpers/auth/authContext";
 import { logout } from "../../helpers/auth/handleJwt";
 import { Authorized } from "../auth/Authorized";
@@ -25,7 +24,7 @@ export const Menu = () => {
                         style={{display: 'flex', justifyContent: 'space-between'}}>
 
                     <Authorized 
-                        role={admin}
+                        role="admin"
                         authorized={<>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/game/create">
@@ -52,6 +51,11 @@ export const Menu = () => {
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/games/search">
                                 Search
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/users">
+                                Users
                             </NavLink>
                         </li>
                         

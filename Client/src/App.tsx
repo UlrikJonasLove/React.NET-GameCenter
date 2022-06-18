@@ -23,7 +23,7 @@ export const App = () => {
   // isAdmin is true if the user has the role "admin"
   // it is greater than -1 if the role is found
   const isAdmin = () => {
-    return claims.findIndex(claim => claim.name === "admin" && claim.value === "admin") > -1;
+    return claims.findIndex(claim => claim.name === 'role' && claim.value === 'admin') > -1;
   }
 
   return (
