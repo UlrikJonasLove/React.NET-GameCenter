@@ -24,7 +24,9 @@ export const IndividualGame = (props: GameDto) => {
     return (
         <article className={css.game}>
             <Link to={buildLink()}>
-                <img alt="Poster" src={props.poster}/>
+                
+                {props.poster ? <img alt="Poster" src={props.poster}/> 
+                : <img alt="No game poster found" src="https://cdn.pixabay.com/photo/2016/03/08/07/08/question-1243504_960_720.png"/>}
             </Link>
             <p>
                 <Link to={buildLink()}>{props.title}</Link>

@@ -8,15 +8,15 @@ import { userDto } from "./model/users.model"
 
 export const Users = () => {
     const assignAdminClaim = async (id: string) => {
-        await adminClaim(`${UrlUsers}/assignAdminClaim`, id)
+        await adminClaim(`${UrlUsers}/assignAdminClaim`, id, "Successfully assigned admin role")
     }
 
     const removeAdminClaim = async (id: string) => {
-        await adminClaim(`${UrlUsers}/removeAdminClaim`, id)
+        await adminClaim(`${UrlUsers}/removeAdminClaim`, id, "Successfully removed admin role")
     }
 
-    const adminClaim = async (url: string, id: string) => {
-        await axios.post(url, JSON.stringify(id), {
+    const adminClaim = async (url: string, id: string, swalText: string) => {
+        await axios.post(url, id, {
             headers: {
                 "Content-Type": "application/json"
             }
@@ -24,7 +24,7 @@ export const Users = () => {
 
         Swal.fire({
             title: "Success",
-            text: "Successfully updated",
+            text: swalText,
             icon: "success",
         })
     }

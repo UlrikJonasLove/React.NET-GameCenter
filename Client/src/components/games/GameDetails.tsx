@@ -76,7 +76,16 @@ export const GameDetails = () => {
 
             <div style={{display: 'flex', marginTop: '1rem'}}>
                 <span style={{display: 'inline-block', marginRight: '1rem'}}>
-                    <img src={game.poster} alt={game.title} style={{width: '225px', height: '315åx'}} />
+                    {game.poster ? 
+                        <img src={game.poster} 
+                            alt={game.title} 
+                            style={{width: '225px', 
+                            height: '315px'}} /> : 
+                    <img src="https://cdn.pixabay.com/photo/2016/03/08/07/08/question-1243504_960_720.png" 
+                        alt="No game poster found" 
+                        style={{width: '225px', 
+                        height: '315px'}} />}
+                    
                 </span>
                 {game.trailer ? <div>
                     <iframe

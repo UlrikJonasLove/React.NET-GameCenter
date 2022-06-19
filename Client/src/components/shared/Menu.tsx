@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import { AuthContext } from "../../helpers/auth/authContext";
 import { logout } from "../../helpers/auth/handleJwt";
 import { Authorized } from "../auth/Authorized";
@@ -9,6 +9,7 @@ export const Menu = () => {
     // this useContext is used to access the AuthContext
     // and gets the claims and the update function from the context
     const {update, claims} = useContext(AuthContext);
+    const history = useHistory();
 
     // this function gets the users email claim 
     const getUserEmail = () : string => {
@@ -69,6 +70,7 @@ export const Menu = () => {
                                     onClick={() => {
                                         logout();
                                         update([]);
+                                        history.push("/");
                                     }}>Log out
                                 </Button>
                             </>}

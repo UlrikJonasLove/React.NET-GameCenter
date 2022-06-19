@@ -35,11 +35,11 @@ export const App = () => {
             {/* Map through all the routes */}
             {routes.map(route=> 
             <Route key={route.path} path={route.path} exact={route.exact}>
-              {/* checks if this route is protected with isAdmin and if the user is NOT an admin, redirect to landing page
+               {/* checks if this route is protected with isAdmin and if the user is NOT an admin, redirect to landing page
               other wise the routes will be available  */}
-              {route.isAdmin && !isAdmin() ? 
-                <RedirectToLandingPage /> : <route.component />}
-            </Route>)}
+             {route.isAdmin && !isAdmin() ?
+                <RedirectToLandingPage />  : <route.component />}
+            </Route>) }
           </Switch>
         </div>
         <Footer />
