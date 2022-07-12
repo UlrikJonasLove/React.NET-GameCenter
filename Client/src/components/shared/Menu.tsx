@@ -25,7 +25,7 @@ export const Menu = () => {
                         style={{display: 'flex', justifyContent: 'space-between'}}>
 
                     <Authorized 
-                        role="admin"
+                         role="admin"
                         authorized={<>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/game/create">
@@ -54,11 +54,16 @@ export const Menu = () => {
                                 Search
                             </NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/users">
-                                Users
-                            </NavLink>
-                        </li>
+                        
+                        <Authorized
+                            authorized={<>
+                                <li className="nav-item">
+                                <NavLink className="nav-link" to="/users">
+                                    Users
+                                </NavLink>
+                                </li>
+                            </>} />
+                        
                         
                     </ul>
                     <div className="d-flex">
@@ -75,8 +80,8 @@ export const Menu = () => {
                                 </Button>
                             </>}
                             notAuthorized={<>
-                                <Link to="/sign-up" className="nav-link btn-link">Sign up</Link>
-                                <Link to="/sign-in" className="nav-link btn-link">Sign in</Link>
+                                <Link to="/sign-up" className="nav-link btn-link">Register</Link>
+                                <Link to="/sign-in" className="nav-link btn-link">Login</Link>
                             </>}
                         />
                     </div>

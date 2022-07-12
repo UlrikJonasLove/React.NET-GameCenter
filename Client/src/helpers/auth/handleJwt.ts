@@ -9,7 +9,7 @@ export const saveToken = (authData: authResponse) => {
   localStorage.setItem(expirationKey, authData.expiration.toString());
 };
 
-export function getClaim(): claim[] {
+export function getClaims(): claim[] {
   const token = localStorage.getItem(tokenKey);
 
   // if there is no token, return an empty array
@@ -31,7 +31,7 @@ export function getClaim(): claim[] {
   for (const property in dataToken) {
     response.push({
       name: property,
-      value: dataToken[property],
+      value: dataToken[property]
     });
   }
 

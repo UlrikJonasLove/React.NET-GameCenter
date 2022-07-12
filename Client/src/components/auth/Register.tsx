@@ -6,7 +6,7 @@ import { DisplayErrors } from "../errorHandling/DisplayErrors";
 import { AuthForm } from "./AuthForm";
 import { UrlAuth } from "../../constants/endpoints";
 import { Link, useHistory } from "react-router-dom";
-import { getClaim, saveToken } from "../../helpers/auth/handleJwt";
+import { getClaims, saveToken } from "../../helpers/auth/handleJwt";
 import { title } from "../../constants/GameCenterVariables";
 
 export const Register = () => {
@@ -21,7 +21,7 @@ const register = async (credentials: authCredentials) => {
         setErrors([]);
         const response = await axios.post<authResponse>(`${UrlAuth}/register`, credentials);
         saveToken(response.data)
-        update(getClaim());
+        update(getClaims());
         history.push("/");
         console.log(response.data);
     }

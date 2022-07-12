@@ -23,6 +23,10 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using GameCenter.DataAccess.Repositories.Games;
+using GameCenter.DataAccess.Repositories.Ratings;
+using GameCenter.Business.Services.Ratings;
+using GameCenter.Business.Services.Games;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,7 +34,8 @@ JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(connectionString, sqlOption => 
+    options.EnableSensitiveDataLogging(true)
+    .UseSqlServer(connectionString, sqlOption =>
     sqlOption.UseNetTopologySuite()));
 
 // Add services to the container.
@@ -116,6 +121,8 @@ static void AddTransient(IServiceCollection services)
     services.AddTransient<IGenreService, GenreService>();
     services.AddTransient<IActorService, ActorService>();
     services.AddTransient<IGameCenterService, GameCenterService>();
+    services.AddTransient<IGameService, GameService>();
+    services.AddTransient<IRatingService, RatingService>();
 }
 
 static void AddScoped(IServiceCollection services)
@@ -124,4 +131,6 @@ static void AddScoped(IServiceCollection services)
     services.AddScoped<IGenreRepository, GenreRepository>();
     services.AddScoped<IActorRepository, ActorRepository>();
     services.AddScoped<IGameCenterRepository, GameCenterRepository>();
+    services.AddScoped<IGameRepository, GameRepository>();
+    services.AddScoped<IRatingRepository, RatingRepository>();
 }

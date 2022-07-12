@@ -37,7 +37,7 @@ namespace GameCenter.Server.Controllers
 
             if (result.Succeeded)
             {
-                return BuildToken(authCredentials);
+                return await BuildToken(authCredentials);
             }
             else
             {
@@ -56,7 +56,7 @@ namespace GameCenter.Server.Controllers
 
             if (result.Succeeded)
             {
-                return BuildToken(authCredentials);
+                return await BuildToken(authCredentials);
             }
             else
             {
@@ -64,12 +64,17 @@ namespace GameCenter.Server.Controllers
             }
         }
 
-        private AuthResponse BuildToken(AuthCredentials authCredentials)
+        private async Task<AuthResponse> BuildToken(AuthCredentials authCredentials)
         {
             var claims = new List<Claim>()
             {
                 new Claim("email", authCredentials.Email)
             };
+
+            var user = await userManager.FindByNameAsync(authCredentials.Email);
+            var claimsDb = await userManager.GetClaimsAsync(user);
+
+            claims.AddRange(claimsDb);
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["keyjwt"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

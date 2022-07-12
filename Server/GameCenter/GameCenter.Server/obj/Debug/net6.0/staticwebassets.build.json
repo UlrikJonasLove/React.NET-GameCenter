@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gmJv7cB8KGDQLWrFAVFK+RPYWcwShcit24vHyD38Na0=",
+  "Hash": "MHSkMRpfyVFxK35h5SRvHl6uzonKO08BJNsJMxiha9k=",
   "Source": "GameCenter.Server",
   "BasePath": "_content/GameCenter.Server",
   "Mode": "Default",
@@ -15,5 +15,91 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\actors\\Ulrik Rosberg\\e5bef485-09ea-486b-8bcf-76aad3e8ae9f.jpg",
+      "SourceId": "GameCenter.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\",
+      "BasePath": "_content/GameCenter.Server",
+      "RelativePath": "actors/Ulrik Rosberg/e5bef485-09ea-486b-8bcf-76aad3e8ae9f.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\actors\\Ulrik Rosberg\\e5bef485-09ea-486b-8bcf-76aad3e8ae9f.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\games\\Lhiuf\\23e9c9cf-a944-4740-b6d4-c428e42c3e2d.jpg",
+      "SourceId": "GameCenter.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\",
+      "BasePath": "_content/GameCenter.Server",
+      "RelativePath": "games/Lhiuf/23e9c9cf-a944-4740-b6d4-c428e42c3e2d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\games\\Lhiuf\\23e9c9cf-a944-4740-b6d4-c428e42c3e2d.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\games\\Little Nightmares\\981b30a4-bfc3-4dfe-9528-7e8fa27b5ded.jpg",
+      "SourceId": "GameCenter.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\",
+      "BasePath": "_content/GameCenter.Server",
+      "RelativePath": "games/Little Nightmares/981b30a4-bfc3-4dfe-9528-7e8fa27b5ded.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\games\\Little Nightmares\\981b30a4-bfc3-4dfe-9528-7e8fa27b5ded.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\games\\Little Nightmares\\ad538d79-bd8c-46d8-a287-cac51afa4939.jpg",
+      "SourceId": "GameCenter.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\",
+      "BasePath": "_content/GameCenter.Server",
+      "RelativePath": "games/Little Nightmares/ad538d79-bd8c-46d8-a287-cac51afa4939.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\games\\Little Nightmares\\ad538d79-bd8c-46d8-a287-cac51afa4939.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\games\\Red Dead Redemption 2\\bcdb1112-7668-450f-966d-8c19f8807403.jpg",
+      "SourceId": "GameCenter.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jonas\\Desktop\\myCode\\Projekt\\GameCenter-React\\Server\\GameCenter\\GameCenter.Server\\wwwroot\\",
+      "BasePath": "_content/GameCenter.Server",
+      "RelativePath": "games/Red Dead Redemption 2/bcdb1112-7668-450f-966d-8c19f8807403.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\games\\Red Dead Redemption 2\\bcdb1112-7668-450f-966d-8c19f8807403.jpg"
+    }
+  ]
 }

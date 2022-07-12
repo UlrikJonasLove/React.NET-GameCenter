@@ -4,6 +4,8 @@ using GameCenter.Business.DTOs.Games;
 using GameCenter.Business.DTOs.Genres;
 using GameCenter.Business.Helpers;
 using GameCenter.Business.Helpers.FileStorage;
+using GameCenter.Business.Services.Games;
+using GameCenter.Business.Services.Ratings;
 using GameCenter.DataAccess.Data;
 using GameCenter.Models.Games;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -25,14 +27,21 @@ namespace GameCenter.Server.Controllers
     public class GamesController : ControllerBase
     {
         private readonly AppDbContext context;
+        private readonly IGameService gameService;
+        private readonly IRatingService ratingService;
         private readonly IMapper mapper;
         private readonly IFileStorageService fileStorage;
         private readonly UserManager<IdentityUser> userManager;
         private string containerName = "games";
 
-        public GamesController(AppDbContext context, IMapper mapper, IFileStorageService fileStorage, UserManager<IdentityUser> userManager)
+        public GamesController(AppDbContext context, IGameService gameService, IRatingService ratingService,
+            IMapper mapper, 
+            IFileStorageService fileStorage, 
+            UserManager<IdentityUser> userManager)
         {
             this.context = context;
+            this.gameService = gameService;
+            this.ratingService = ratingService;
             this.mapper = mapper;
             this.fileStorage = fileStorage;
             this.userManager = userManager;
@@ -96,6 +105,7 @@ namespace GameCenter.Server.Controllers
 
                     var ratingDb = await context.Ratings.FirstOrDefaultAsync(x => x.GameId == id && x.UserId == userId);
 
+
                     if(ratingDb != null)
                     {
                         userVote = ratingDb.Rate;
@@ -116,7 +126,7 @@ namespace GameCenter.Server.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<List<GameDto>>> Filter([FromQuery] GameFilterDto gameFilter)
         {
-            var gamesQueryable = context.Games.AsQueryable();
+            var gamesQueryable = gameService.GetGamesAsQueryable();
 
             if (!string.IsNullOrEmpty(gameFilter.Title))
             {
@@ -169,12 +179,12 @@ namespace GameCenter.Server.Controllers
 
             if(gameCreation.Poster != null)
             {
-                game.Poster = await fileStorage.SaveFile($"{containerName}/{gameCreation.Title}", gameCreation.Poster);
+                game.Poster = await fileStorage.SaveFile($"{containerName}/{game.Title}", gameCreation.Poster);
             }
 
             AnnotateActorsOrder(game);
-            context.Add(game);
-            await context.SaveChangesAsync();
+            gameService.AddGame(game);
+            await gameService.SaveGameAsync();
 
             return game.Id;
         }
@@ -226,13 +236,13 @@ namespace GameCenter.Server.Controllers
 
             if (gameCreation.Poster != null)
             {
-                game.Poster = await fileStorage.EditFile($"{containerName}/{gameCreation.Title}", gameCreation.Poster, game.Poster);
+                game.Poster = await fileStorage.EditFile($"{containerName}/{game.Title}", gameCreation.Poster, game.Poster);
             }
                 
 
             AnnotateActorsOrder(game);
 
-            await context.SaveChangesAsync();
+            await gameService.SaveGameAsync();
             return NoContent();
         }
 
@@ -255,9 +265,9 @@ namespace GameCenter.Server.Controllers
             if (game == null)
                 return NotFound();
 
-            context.Remove(game);
+            gameService.DeleteGame(game);
             await context.SaveChangesAsync();
-            await fileStorage.DeleteFile(game.Poster, containerName);
+            await fileStorage.DeleteFile(game.Poster, $"{containerName}/{game.Title}");
 
             return NoContent();
         }

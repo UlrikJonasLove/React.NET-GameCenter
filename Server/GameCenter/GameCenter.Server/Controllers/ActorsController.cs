@@ -116,7 +116,7 @@ namespace GameCenter.Server.Controllers
 
             service.DeleteActor(actor);
             await service.SaveActorAsync();
-            await fileStorage.DeleteFile(actor.Picture, containerName);
+            await fileStorage.DeleteFile(actor.Picture, $"{containerName}/{actor.Name}");
 
             return NoContent();
         }

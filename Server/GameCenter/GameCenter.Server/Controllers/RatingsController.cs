@@ -30,9 +30,9 @@ namespace GameCenter.Server.Controllers
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult> Post([FromBody] RatingDto rating)
         {
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
-            var email = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "email").Value;
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
+
+            var email = HttpContext.User?.Claims?.FirstOrDefault(x => x.Type == "email")?.Value;
+
             var user = await userManager.FindByEmailAsync(email);
             var userId = user.Id;
 

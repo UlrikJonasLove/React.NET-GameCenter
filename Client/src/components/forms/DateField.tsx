@@ -4,12 +4,12 @@ import { dateFieldProps } from "./forms.model"
 export const DateField = (props: dateFieldProps) => {
     const {values, validateForm, touched, errors} = useFormikContext<any>();
     return(
-        <div className="mb-3">
+        <div>
             <label htmlFor={props.field}>{props.displayName}</label>
             <input type="date" className="form-control"
             id={props.field}
             name={props.field}
-            defaultValue={values[props.field]?.toLocaleString("en-CA")}
+            defaultValue={values[props.field]?.toLocaleString("sv-SE")}
             onChange={e => {
                 const date = new Date(e.currentTarget.value + "T00:00:00");
                 values[props.field] = date;

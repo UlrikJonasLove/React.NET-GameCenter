@@ -5,8 +5,8 @@ import { Menu } from './components/shared/Menu';
 import { RedirectToLandingPage } from './components/utils/RedirectToLandingPage';
 import { routes } from './constants/route-config';
 import { AuthContext } from './helpers/auth/authContext';
-import { getClaim } from './helpers/auth/handleJwt';
-import { configureInterceptor } from './helpers/http/httpInterceptor';
+import { getClaims } from './helpers/auth/handleJwt';
+import { configureInterceptor }  from './helpers/http/httpInterceptor';
 import { claim } from './models/auth/auth.models';
 import configureValidations from './Validations';
 
@@ -18,10 +18,10 @@ export const App = () => {
   const [claims, setClaims] = useState<claim[]>([]);
 
   useEffect(() => {
-    setClaims(getClaim());
+    setClaims(getClaims());
   }, [])
   // isAdmin is true if the user has the role "admin"
-  // it is greater than -1 if the role is found
+  //it is greater than -1 if the role is found
   const isAdmin = () => {
     return claims.findIndex(claim => claim.name === 'role' && claim.value === 'admin') > -1;
   }
@@ -38,7 +38,7 @@ export const App = () => {
                {/* checks if this route is protected with isAdmin and if the user is NOT an admin, redirect to landing page
               other wise the routes will be available  */}
              {route.isAdmin && !isAdmin() ?
-                <RedirectToLandingPage />  : <route.component />}
+                <RedirectToLandingPage />  : <route.component /> }
             </Route>) }
           </Switch>
         </div>

@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using GameCenter.Models.Games;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using GameCenter.Models.Rating;
+using NetTopologySuite.Geometries;
+using GameCenter.DataAccess.Seeders;
 
 namespace GameCenter.DataAccess.Data
 {
@@ -33,6 +35,22 @@ namespace GameCenter.DataAccess.Data
 
             // IdentityDbContext is expecting to be called through this OnModelCreating
             base.OnModelCreating(builder);
+
+
+            //GameSeeder game = new();
+            //game.SeedGames(builder);
+
+            //GenreSeeder genre = new();
+            //genre.SeedGenres(builder);
+
+            //ActorsSeeder actors = new();
+            //actors.SeedActors(builder);
+            
+            //GamesGenresSeeder gamesGenres = new();
+            //gamesGenres.SeedGamesGenres(builder);
+
+            //GamesActorsSeeder gamesActors = new();
+            //gamesActors.SeedGamesActors(builder);
         }
 
         public DbSet<Genre> Genres { get; set; }

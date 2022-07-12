@@ -32,7 +32,7 @@ export const IndividualGame = (props: GameDto) => {
                 <Link to={buildLink()}>{props.title}</Link>
             </p>
             <Authorized 
-                role="admin"
+                // role="admin"
                 authorized={<>
                     <section>
                         <Link style={{marginRight: '1rem'}} className="btn btn-info" to={`/game/edit/${props.id}`}>Edit</Link>

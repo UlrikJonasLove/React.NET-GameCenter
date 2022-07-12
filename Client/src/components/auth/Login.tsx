@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import { UrlAuth } from "../../constants/endpoints";
 import { title } from "../../constants/GameCenterVariables";
 import { AuthContext } from "../../helpers/auth/authContext";
-import { getClaim, saveToken } from "../../helpers/auth/handleJwt";
+import { getClaims, saveToken } from "../../helpers/auth/handleJwt";
 import { authCredentials, authResponse } from "../../models/auth/auth.models";
 import { DisplayErrors } from "../errorHandling/DisplayErrors";
 import { AuthForm } from "./AuthForm";
@@ -20,7 +20,7 @@ export const Login = () => {
         setErrors([]);
         const response = await axios.post<authResponse>(`${UrlAuth}/login`, credentials);
         saveToken(response.data);
-        update(getClaim());
+        update(getClaims());
         history.push("/");
       } catch (error) {
         if(error && error.response) {
