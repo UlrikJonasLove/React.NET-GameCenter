@@ -37,20 +37,15 @@ namespace GameCenter.DataAccess.Data
             base.OnModelCreating(builder);
 
 
-            //GameSeeder game = new();
-            //game.SeedGames(builder);
+            GameSeeder.SeedGames(builder);
 
-            //GenreSeeder genre = new();
-            //genre.SeedGenres(builder);
+            GenreSeeder.SeedGenres(builder);
 
-            //ActorsSeeder actors = new();
-            //actors.SeedActors(builder);
-            
-            //GamesGenresSeeder gamesGenres = new();
-            //gamesGenres.SeedGamesGenres(builder);
+            ActorsSeeder.SeedActors(builder);
 
-            //GamesActorsSeeder gamesActors = new();
-            //gamesActors.SeedGamesActors(builder);
+            GamesGenresSeeder.SeedGamesGenres(builder);
+
+            GamesActorsSeeder.SeedGamesActors(builder);
         }
 
         public DbSet<Genre> Genres { get; set; }

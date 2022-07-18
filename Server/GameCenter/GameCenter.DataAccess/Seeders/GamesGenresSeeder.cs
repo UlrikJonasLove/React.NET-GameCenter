@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace GameCenter.DataAccess.Seeders
 {
-    public class GamesGenresSeeder
+    public static class GamesGenresSeeder
     {
-        public void SeedGamesGenres(ModelBuilder builder)
+        public static void SeedGamesGenres(ModelBuilder builder)
         {
             builder.Entity<GamesGenres>().HasData(new GamesGenres
             {
